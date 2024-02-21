@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { i18nConfig } from "@/i18nConfig";
 
-async function getData(locale) {
+async function getData(locale: string) {
   const res = await fetch(
     `https://api.storyblok.com/v2/cdn/stories/header?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&cv=1708530770&language=${locale}`
   );
@@ -15,7 +15,7 @@ async function getData(locale) {
   return res.json();
 }
 
-export default async function Header({ locale }) {
+export default async function Header({ locale }: { locale: string }) {
   const data = await getData(locale);
   const locales = i18nConfig.names;
   return (
@@ -38,7 +38,7 @@ export default async function Header({ locale }) {
             ))}
           </div>
           <nav className={styles.nav}>
-            {data.story.content.nav.map((navlink) => (
+            {data.story.content.nav.map((navlink: any) => (
               <Link href={navlink.nav_link.url} key={navlink._uid}>
                 {navlink.nav_text}
               </Link>

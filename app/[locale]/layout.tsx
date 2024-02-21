@@ -30,7 +30,7 @@ export default function RootLayout({
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
-  params?: any;
+  params: PageParams;
 }>) {
   return (
     <StoryblokProvider>
