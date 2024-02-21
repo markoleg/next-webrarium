@@ -6,6 +6,10 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/app/components/StoryblokComponents/StoryblokProvider";
 import { i18nConfig } from "@/i18nConfig";
 
+type PageParams = {
+  locale: string;
+};
+
 storyblokInit({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
   description: "We Webrarium",
 };
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<PageParams[]> {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
 

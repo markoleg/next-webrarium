@@ -8,7 +8,7 @@ export default async function Home({ params: { locale } }: any) {
 
   return <StoryblokStory story={data.story} />;
 }
-export async function fetchData(locale: string) {
+async function fetchData(locale: string) {
   let sbParams: {
     version: "published" | "draft";
     language: any;
