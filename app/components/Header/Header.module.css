@@ -1,0 +1,26 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.header_wrp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.lang {
+  margin-left: 5vw;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+}
+.lang a:hover {
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
