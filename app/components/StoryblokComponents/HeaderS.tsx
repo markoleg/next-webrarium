@@ -1,0 +1,50 @@
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import styles from "@/app/components/Header/Header.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import { i18nConfig } from "@/i18nConfig";
+
+export default function HeaderS({ blok }: { blok: any }) {
+  function openMenu() {
+    const menu = document.querySelector("#menu");
+    const burger = document.querySelector("#brg");
+    burger?.classList.toggle(`${styles.brg_open}`);
+    menu?.classList.toggle(`${styles.nav_show}`);
+  }
+  return (
+    <header {...storyblokEditable(blok)} className={styles.header}>
+      <div className="container">
+        <div className={styles.header_wrp}>
+          <Link href="/" className={styles.brand}>
+            <Image
+              src={blok.logo.filename}
+              width={150}
+              height={17}
+              alt="webrarium logo"
+              className="brand_img"
+            />
+          </Link>
+          <div className={styles.nav_wrp} id="menu">
+            <div className={styles.lang}>
+              {i18nConfig.locales.map((lang, index) => (
+                <Link href={lang} key={lang}>
+                  {i18nConfig.names[index]}
+                </Link>
+              ))}
+            </div>
+            <nav className={styles.nav} onClick={openMenu}>
+              {blok.nav.map((navlink: any) => (
+                <StoryblokComponent blok={navlink} key={navlink._uid} />
+              ))}
+            </nav>
+          </div>
+          <div className={styles.brg} id="brg" onClick={openMenu}>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
