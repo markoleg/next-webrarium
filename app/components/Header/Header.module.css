@@ -3,6 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
+  background-color: rgb(var(--background-start-rgb));
+  z-index: 10;
 }
 .header_wrp {
   display: flex;
@@ -60,7 +62,7 @@
     height: 100%;
     top: 0;
     right: -100%;
-    z-index: 1;
+    z-index: 3;
     background: linear-gradient(
         to bottom,
         transparent,

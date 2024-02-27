@@ -1,3 +1,12 @@
+.hero_section {
+  height: 100vh;
+}
+.hero_wrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .hero_title {
   font-size: 2rem;
   text-align: center;

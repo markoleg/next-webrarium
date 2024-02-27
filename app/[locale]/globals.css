@@ -68,6 +68,7 @@ main {
   max-width: var(--max-width);
   margin-inline: auto;
   padding-inline: 2rem;
+  height: 100%;
 }
 @media (max-width: 980px) {
   .container {
