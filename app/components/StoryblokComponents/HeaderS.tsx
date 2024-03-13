@@ -25,13 +25,6 @@ export default function HeaderS({ blok }: { blok: any }) {
             />
           </Link>
           <div className={styles.nav_wrp} id="menu">
-            {/* <div className={styles.lang}>
-              {i18nConfig.locales.map((lang, index) => (
-                <Link href="" key={lang}>
-                  {i18nConfig.names[index]}
-                </Link>
-              ))}
-            </div> */}
             <LanguageChanger />
             <nav className={styles.nav} onClick={openMenu}>
               {blok.nav.map((navlink: any) => (

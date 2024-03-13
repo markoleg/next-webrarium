@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { i18nConfig } from "@/i18nConfig";
 import styles from "@/app/components/LanguageSwitcher/LangChanger.module.css";
+import { ChangeEvent } from "react";
 
 export default function LanguageChanger() {
   //get current locale from cookie NEXT_LOCALE
@@ -15,7 +16,7 @@ export default function LanguageChanger() {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop()?.split(";").shift();
   }
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newLocale = e.target.value;
 
     // set cookie for next-i18n-router
@@ -37,13 +38,6 @@ export default function LanguageChanger() {
     router.refresh();
   };
 
-  //   return (
-  //     <select onChange={handleChange} value={currentLocale}>
-  //       {i18nConfig.locales.map((lang, index) => (
-  //         <option value={lang}>{i18nConfig.names[index]}</option>
-  //       ))}
-  //     </select>
-  //   );
   return (
     <div className={styles.lang_wrp}>
       {i18nConfig.locales.map((lang, index) => (
