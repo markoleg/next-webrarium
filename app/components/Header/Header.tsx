@@ -3,7 +3,7 @@ import StoryblokStory from "@storyblok/react/story";
 
 export default async function Header({ locale }: { locale: string }) {
   const { data } = await fetchData(locale);
-  return <StoryblokStory story={data.story} />;
+  return <StoryblokStory story={data.story} locale={locale} />;
 }
 async function fetchData(locale: string) {
   let sbParams: {

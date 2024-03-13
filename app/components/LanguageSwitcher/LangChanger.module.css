@@ -1,0 +1,15 @@
+.lang_wrp {
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.lang_wrp input:checked ~ label {
+  text-decoration: underline;
+}
+.lang_wrp label {
+  cursor: pointer;
+}
+.lang_wrp input {
+  appearance: none;
+}

@@ -2,7 +2,7 @@ import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import styles from "@/app/components/Header/Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { i18nConfig } from "@/i18nConfig";
+import LanguageChanger from "../LanguageSwitcher/LangChanger";
 
 export default function HeaderS({ blok }: { blok: any }) {
   function openMenu() {
@@ -25,13 +25,14 @@ export default function HeaderS({ blok }: { blok: any }) {
             />
           </Link>
           <div className={styles.nav_wrp} id="menu">
-            <div className={styles.lang}>
+            {/* <div className={styles.lang}>
               {i18nConfig.locales.map((lang, index) => (
-                <Link href={lang} key={lang}>
+                <Link href="" key={lang}>
                   {i18nConfig.names[index]}
                 </Link>
               ))}
-            </div>
+            </div> */}
+            <LanguageChanger />
             <nav className={styles.nav} onClick={openMenu}>
               {blok.nav.map((navlink: any) => (
                 <StoryblokComponent blok={navlink} key={navlink._uid} />

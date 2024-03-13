@@ -17,15 +17,7 @@
   position: relative;
   z-index: 10;
 }
-.lang {
-  margin-inline: auto;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.lang a:hover {
-  text-decoration: underline;
-}
+
 .nav_wrp {
   display: flex;
   width: 100%;
