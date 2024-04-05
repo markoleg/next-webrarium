@@ -4,18 +4,19 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { i18nConfig } from "@/i18nConfig";
 import styles from "@/app/components/LanguageSwitcher/LangChanger.module.css";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
+import nookies from "nookies";
 
 export default function LanguageChanger() {
-  //get current locale from cookie NEXT_LOCALE
-  const currentLocale = getCookie("NEXT_LOCALE");
+  const [currentLocale, setCurrentLocale] = useState("");
   const router = useRouter();
   const currentPathname = usePathname();
-  function getCookie(name: string) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop()?.split(";").shift();
-  }
+  //get current locale from cookie NEXT_LOCALE
+  useEffect(function () {
+    setCurrentLocale(nookies.get(null, "NEXT_LOCALE")?.NEXT_LOCALE);
+    // console.log(currentLocale);
+  }, []);
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newLocale = e.target.value;
 

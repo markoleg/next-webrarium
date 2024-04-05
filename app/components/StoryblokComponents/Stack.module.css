@@ -1,0 +1,16 @@
+.img_wrp {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-inline: 1rem;
+}
+.marquee_wrp path {
+  fill: rgb(var(--foreground-rgb));
+}
+.title,
+.subtitle {
+  text-align: center;
+  text-wrap: balance;
+  margin-bottom: 7vw;
+}

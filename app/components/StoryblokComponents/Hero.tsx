@@ -6,7 +6,12 @@ export default function Hero({ blok }: { blok: any }) {
     <section {...storyblokEditable(blok)} className={styles.hero_section}>
       <div className="container">
         <div className={styles.hero_wrp}>
-          <h1 className={styles.hero_title}>{blok.title}</h1>
+          <h1>
+            <span className={styles.hero_title}>{blok.title}</span>
+            <br />
+            <span className={styles.subtitle}>{blok.subtitle}</span>
+          </h1>
+          <div className="divider"></div>
         </div>
       </div>
     </section>

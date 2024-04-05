@@ -2,11 +2,12 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
 import Page from "./Page";
-import Hero from "./Hero";
 import HeaderS from "./HeaderS";
 import NavLink from "./NavLink";
+import Hero from "./Hero";
 import WorkTL from "./WorkTL";
 import WorkTLCard from "./WorkTLCard";
+import Stack from "./Stack";
 
 const components = {
   page: Page,
@@ -15,6 +16,7 @@ const components = {
   nav_link: NavLink,
   work_tl: WorkTL,
   work_tl_card: WorkTLCard,
+  stack: Stack,
 };
 
 storyblokInit({
