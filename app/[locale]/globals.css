@@ -139,3 +139,14 @@ h2 {
     padding-inline: 1rem;
   }
 }
+.canv_wrp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.canv_wrp canvas {
+  height: 100%;
+}

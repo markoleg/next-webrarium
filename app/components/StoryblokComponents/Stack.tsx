@@ -1,6 +1,7 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import styles from "./Stack.module.css";
 import Marquee from "react-fast-marquee";
+
 export default function Stack({ blok }: { blok: any }) {
   return (
     <section {...storyblokEditable(blok)} className={styles.stack_section}>
@@ -9,7 +10,7 @@ export default function Stack({ blok }: { blok: any }) {
         <p className={styles.subtitle}>{blok.subtitle}</p>
       </div>
       <div className={styles.marquee_wrp}>
-        <Marquee direction="right" autoFill={true}>
+        <Marquee direction="left" autoFill={true}>
           <div className={styles.img_wrp}>
             <svg
               width="144"
