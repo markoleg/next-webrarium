@@ -4,10 +4,14 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "./Page";
 import HeaderS from "./HeaderS";
 import NavLink from "./NavLink";
-import Hero from "./Hero";
-import WorkTL from "./WorkTL";
-import WorkTLCard from "./WorkTLCard";
-import Stack from "./Stack";
+import Hero from "./Hero/Hero";
+import WorkTL from "./WorkTL/WorkTL";
+import WorkTLCard from "./WorkTL/WorkTLCard";
+import Stack from "./Stack/Stack";
+import Focus from "./Focus/Focus";
+import FocusCard from "./Focus/FocusCard";
+import LatestProjects from "./LatestProjects/LatestProjects";
+import ProjectCard from "./LatestProjects/LatestProjectsCard";
 
 const components = {
   page: Page,
@@ -17,6 +21,10 @@ const components = {
   work_tl: WorkTL,
   work_tl_card: WorkTLCard,
   stack: Stack,
+  focus: Focus,
+  focus_card: FocusCard,
+  latest_projects: LatestProjects,
+  project_card: ProjectCard,
 };
 
 storyblokInit({
