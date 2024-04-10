@@ -138,6 +138,16 @@ h2 {
 }
 h3 {
   font-size: 1.75rem;
+  font-size: clamp(18px, 2.5vw, 32px);
+}
+
+.canv_wrp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 @media (max-width: 980px) {
@@ -149,11 +159,8 @@ h3 {
     padding-inline: 1rem;
   }
 }
-.canv_wrp {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+@media (width<700px) {
+  .canv_wrp {
+    display: none;
+  }
 }

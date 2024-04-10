@@ -1,0 +1,32 @@
+.cta_card {
+  background: rgb(var(--foreground-rgb));
+  border-radius: var(--border-radius);
+  color: rgb(var(--background-end-rgb));
+  padding: var(--card-padding);
+  max-width: 360px;
+  margin-inline: auto;
+}
+.cta_title {
+  width: 50%;
+}
+.cta_btn {
+  border: 1px solid rgb(var(--background-end-rgb));
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+.cta_btn svg path {
+  fill: rgb(var(--background-end-rgb));
+}
+.cta_btn:hover {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-end-rgb));
+  transform: scale(1.05);
+}
+.cta_btn:hover svg path {
+  fill: rgb(var(--foreground-rgb));
+  fill: var(--main-color);
+}

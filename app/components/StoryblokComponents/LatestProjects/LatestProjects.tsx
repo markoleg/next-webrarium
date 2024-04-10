@@ -8,7 +8,11 @@ export default function LatestProjects({ blok }: { blok: any }) {
         <h2>{blok.title}</h2>
         <div className={styles.latest_projects_wrp}>
           {blok.latest_projects.map((card: any) => (
-            <StoryblokComponent blok={card} key={card._uid} />
+            <StoryblokComponent
+              blok={card}
+              key={card._uid}
+              btntxt={blok.btn_txt}
+            />
           ))}
         </div>
       </div>

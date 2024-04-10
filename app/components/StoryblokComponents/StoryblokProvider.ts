@@ -12,6 +12,11 @@ import Focus from "./Focus/Focus";
 import FocusCard from "./Focus/FocusCard";
 import LatestProjects from "./LatestProjects/LatestProjects";
 import ProjectCard from "./LatestProjects/LatestProjectsCard";
+import Cta from "./Cta/Cta";
+import Partners from "./Partners/Partners";
+import PartnerLogo from "./Partners/PartnerLogo";
+import Testimonials from "./Testimonials/Testimonials";
+import TestimonialCard from "./Testimonials/TestimonialCard";
 
 const components = {
   page: Page,
@@ -25,6 +30,11 @@ const components = {
   focus_card: FocusCard,
   latest_projects: LatestProjects,
   project_card: ProjectCard,
+  cta: Cta,
+  partners: Partners,
+  partner_logo: PartnerLogo,
+  testimonials: Testimonials,
+  testimonial_card: TestimonialCard,
 };
 
 storyblokInit({

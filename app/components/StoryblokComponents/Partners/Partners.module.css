@@ -1,0 +1,48 @@
+.partners_logos_wrp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 120px;
+  gap: var(--spacing);
+}
+.partner_logo_card {
+  background: rgb(var(--foreground-rgb));
+  padding: var(--card-padding);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partner_logo {
+  max-width: 100%;
+  filter: invert(1);
+  transition: all 0.1s ease;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+}
+.partner_logo_card span {
+  max-width: 0;
+  opacity: 0;
+  color: rgb(var(--background-end-rgb));
+  overflow: hidden;
+  transition: all 0.1s ease;
+}
+.partner_logo_card:hover img {
+  max-width: 0%;
+  opacity: 0;
+}
+.partner_logo_card:hover span {
+  max-width: none;
+  opacity: 1;
+}
+@media (prefers-color-scheme: dark) {
+  .partner_logo {
+    filter: invert(0);
+  }
+}
+@media (width<700px) {
+  .partners_logos_wrp {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 100px;
+  }
+}
