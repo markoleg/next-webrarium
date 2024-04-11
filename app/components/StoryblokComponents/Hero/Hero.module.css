@@ -1,9 +1,8 @@
 .hero_section {
-  /* height: 85svh; */
-  min-height: 70svh;
-  display: grid;
-  place-items: center;
-  padding-bottom: 0;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease;
 }
 .hero_wrp {
   display: flex;
