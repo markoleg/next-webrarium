@@ -6,8 +6,9 @@
   margin: auto;
 }
 .testimonial_card {
-  background: rgb(var(--foreground-rgb));
-  color: rgb(var(--background-end-rgb));
+  /* background: rgb(var(--foreground-rgb)); */
+  /* color: rgb(var(--background-end-rgb)); */
+  border: 1px solid rgb(var(--foreground-rgb));
   border-radius: var(--border-radius);
   padding: var(--card-padding);
   break-inside: avoid-column;
@@ -37,7 +38,7 @@
   margin: 1rem 0;
 }
 .testimonial_card svg path {
-  fill: rgb(var(--background-end-rgb));
+  fill: rgb(var(--foreground-rgb));
 }
 .testimonial_card p:not(:last-child) {
   margin-bottom: 1rem;

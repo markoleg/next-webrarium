@@ -113,7 +113,7 @@ main {
   min-height: 100vh;
 }
 section {
-  padding: 10vw 0;
+  padding: 7vw 0;
 }
 .container {
   max-width: var(--max-width);
@@ -162,5 +162,11 @@ h3 {
 @media (width<700px) {
   .canv_wrp {
     display: none;
+  }
+  section {
+    padding: 20vw 0;
+  }
+  h2 {
+    margin-bottom: 2rem;
   }
 }

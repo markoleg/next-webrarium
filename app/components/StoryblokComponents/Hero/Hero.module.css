@@ -1,5 +1,9 @@
 .hero_section {
-  height: 85svh;
+  /* height: 85svh; */
+  min-height: 70svh;
+  display: grid;
+  place-items: center;
+  padding-bottom: 0;
 }
 .hero_wrp {
   display: flex;
@@ -8,7 +12,7 @@
   align-items: center;
   height: 100%;
   text-align: center;
-  gap: 10vw;
+  gap: 8vw;
 }
 .hero_title {
   font-size: clamp(40px, 6vw, 100px);

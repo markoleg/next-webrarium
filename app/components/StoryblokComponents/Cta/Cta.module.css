@@ -1,7 +1,8 @@
 .cta_card {
-  background: rgb(var(--foreground-rgb));
+  /* background: rgb(var(--foreground-rgb)); */
   border-radius: var(--border-radius);
-  color: rgb(var(--background-end-rgb));
+  /* color: rgb(var(--background-end-rgb)); */
+  border: 1px solid rgb(var(--foreground-rgb));
   padding: var(--card-padding);
   max-width: 360px;
   margin-inline: auto;
@@ -10,7 +11,7 @@
   width: 50%;
 }
 .cta_btn {
-  border: 1px solid rgb(var(--background-end-rgb));
+  border: 1px solid rgb(var(--foreground-rgb));
   border-radius: 50px;
   padding: 1rem 2rem;
   display: inline-flex;
@@ -19,7 +20,7 @@
   transition: all 0.2s ease;
 }
 .cta_btn svg path {
-  fill: rgb(var(--background-end-rgb));
+  fill: rgb(var(--foreground-rgb));
 }
 .cta_btn:hover {
   color: rgb(var(--foreground-rgb));

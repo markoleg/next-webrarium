@@ -9,13 +9,21 @@
   gap: var(--spacing);
 }
 .project_card {
-  transition: all 0.5s ease;
   border-radius: var(--border-radius);
   color: white;
   overflow: hidden;
+  position: relative;
 }
-.project_card:hover {
-  background-size: 110% !important;
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+.project_card:hover .bg {
+  transform: scale(1.1);
 }
 .project_card:hover .pc_content {
   opacity: 1;
@@ -29,12 +37,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
+  height: 100%;
 }
 .case_btn {
   border: 1px solid white;
   padding: 1rem;
   border-radius: 50vw;
   transition: transform 0.1s ease;
+  margin-top: auto;
 }
 .case_btn:hover {
   transform: scale(1.05);

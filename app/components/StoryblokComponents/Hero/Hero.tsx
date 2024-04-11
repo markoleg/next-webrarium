@@ -1,6 +1,6 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import styles from "./Hero.module.css";
-import Splinet from "@/app/components/spline";
+// import Splinet from "@/app/components/spline";
 
 export default function Hero({ blok }: { blok: any }) {
   return (
@@ -15,7 +15,7 @@ export default function Hero({ blok }: { blok: any }) {
           <div className="divider"></div>
         </div>
       </div>
-      <Splinet />
+      {/* <Splinet /> */}
     </section>
   );
 }

@@ -5,7 +5,9 @@
   gap: var(--spacing);
 }
 .partner_logo_card {
-  background: rgb(var(--foreground-rgb));
+  /* background: rgb(var(--foreground-rgb)); */
+  border: 1px solid rgb(var(--foreground-rgb));
+
   padding: var(--card-padding);
   border-radius: var(--border-radius);
   display: flex;
@@ -14,7 +16,7 @@
 }
 .partner_logo {
   max-width: 100%;
-  filter: invert(1);
+  filter: invert(0);
   transition: all 0.1s ease;
   height: 100%;
   object-fit: contain;
@@ -23,7 +25,7 @@
 .partner_logo_card span {
   max-width: 0;
   opacity: 0;
-  color: rgb(var(--background-end-rgb));
+  /* color: rgb(var(--background-end-rgb)); */
   overflow: hidden;
   transition: all 0.1s ease;
 }
@@ -37,7 +39,7 @@
 }
 @media (prefers-color-scheme: dark) {
   .partner_logo {
-    filter: invert(0);
+    filter: invert(1);
   }
 }
 @media (width<700px) {

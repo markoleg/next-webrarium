@@ -17,6 +17,7 @@ import Partners from "./Partners/Partners";
 import PartnerLogo from "./Partners/PartnerLogo";
 import Testimonials from "./Testimonials/Testimonials";
 import TestimonialCard from "./Testimonials/TestimonialCard";
+import Contact from "./Contact/Contact";
 
 const components = {
   page: Page,
@@ -35,6 +36,7 @@ const components = {
   partner_logo: PartnerLogo,
   testimonials: Testimonials,
   testimonial_card: TestimonialCard,
+  contact: Contact,
 };
 
 storyblokInit({

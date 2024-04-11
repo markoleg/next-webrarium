@@ -10,16 +10,12 @@ export default function ProjectCard({
   btntxt: string;
 }) {
   return (
-    <div
-      {...storyblokEditable(blok)}
-      className={styles.project_card}
-      style={{
-        backgroundImage: `url(${blok.cover.filename})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "100%",
-        backgroundPosition: "center center",
-      }}
-    >
+    <div {...storyblokEditable(blok)} className={styles.project_card}>
+      <img
+        src={blok.cover.filename}
+        alt={blok.cover.alt}
+        className={styles.bg}
+      />
       <div className={styles.pc_content}>
         <h3>{blok.title}</h3>
         <div className={styles.divider}></div>
