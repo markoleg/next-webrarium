@@ -10,6 +10,7 @@
     "proxy": "npx local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.0",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.93",
     "@storyblok/react": "^3.0.8",

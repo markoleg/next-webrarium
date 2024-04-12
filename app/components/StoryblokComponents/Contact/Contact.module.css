@@ -47,6 +47,7 @@
   transition: all 0.2s ease;
   transform-origin: left;
   cursor: pointer;
+  color: inherit;
 }
 .form_submit:hover {
   background: rgb(var(--background-end-rgb));

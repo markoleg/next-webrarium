@@ -3,7 +3,10 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import styles from "./WorkTL.module.css";
 export default function WorkTLCard({ blok }: { blok: any }) {
   return (
-    <div className={styles.work_tl_card} {...storyblokEditable(blok)}>
+    <div
+      className={styles.work_tl_card + " " + "tl"}
+      {...storyblokEditable(blok)}
+    >
       <div className={styles.front}>
         <div>{blok.title}</div>
         <svg

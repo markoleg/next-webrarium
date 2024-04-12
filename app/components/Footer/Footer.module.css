@@ -1,0 +1,17 @@
+.f_nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin: 4rem 0;
+}
+.f_brand {
+  text-align: center;
+  margin-top: 5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.copyright {
+  text-align: center;
+  margin-bottom: 2rem;
+}

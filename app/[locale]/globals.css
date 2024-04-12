@@ -114,6 +114,7 @@ main {
 }
 section {
   padding: 7vw 0;
+  overflow: hidden;
 }
 .container {
   max-width: var(--max-width);
