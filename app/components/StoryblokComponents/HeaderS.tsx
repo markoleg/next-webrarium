@@ -24,6 +24,7 @@ export default function HeaderS({ blok }: { blok: any }) {
               className="brand_img"
             />
           </Link>
+
           <div className={styles.nav_wrp} id="menu">
             <LanguageChanger />
             <nav className={styles.nav} onClick={openMenu}>

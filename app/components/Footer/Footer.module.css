@@ -5,6 +5,9 @@
   justify-content: center;
   margin: 4rem 0;
 }
+.f_nav ul li a:hover {
+  text-decoration: 3px var(--main-color) solid underline;
+}
 .f_brand {
   text-align: center;
   margin-top: 5rem;

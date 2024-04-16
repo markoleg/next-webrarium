@@ -20,7 +20,7 @@ export default function ProjectCard({
         <h3>{blok.title}</h3>
         <div className={styles.divider}></div>
         <div className={styles.description}>{blok.description}</div>
-        <Link href={blok.link.url} className={styles.case_btn}>
+        <Link href={blok.link.url} className={styles.case_btn} target="_blank">
           {btntxt}
         </Link>
       </div>

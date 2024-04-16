@@ -1,9 +1,14 @@
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
-export default function Footer() {
+export default async function Footer({ locale }: { locale: string }) {
   // get current year
   const date = new Date();
   let year = date.getFullYear();
+  // get navlinks from SB header component
+  const data = await fetch(
+    `https://api.storyblok.com/v2/cdn/stories/header?version=draft&token=FG91Diyiq9BKP4moQrYgewtt&language=${locale}`
+  ).then((response) => response.json());
 
   return (
     <footer>
@@ -12,9 +17,11 @@ export default function Footer() {
         <div className={styles.f_brand}>WEBRARIUM</div>
         <nav className={styles.f_nav}>
           <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
+            {data.story.content.nav.map((navlink: any) => (
+              <li key={navlink._uid}>
+                <Link href={navlink.nav_link.url}>{navlink.nav_text}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <p className={styles.copyright}>

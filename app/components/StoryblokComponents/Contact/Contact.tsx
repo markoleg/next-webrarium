@@ -20,17 +20,13 @@ const Contact = ({ blok }: { blok: any }) => {
   }
 
   return (
-    <section>
+    <section {...storyblokEditable(blok)} id="contact">
       <div className="container">
         <h2 className={styles.form_title}>{blok.title}</h2>
         <p className={styles.form_subtitle}>{blok.description}</p>
         <div className={styles.form_wrp}>
           <div className={styles.form_left}>
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              {...storyblokEditable(blok)}
-              className={styles.form}
-            >
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
               <div className={styles.field}>
                 <label htmlFor="name">{blok.name_label}</label>
                 <input type="text" {...register("name", { required: true })} />

@@ -3,7 +3,7 @@ import styles from "./LatestProjects.module.css";
 
 export default function LatestProjects({ blok }: { blok: any }) {
   return (
-    <section {...storyblokEditable(blok)}>
+    <section {...storyblokEditable(blok)} id="projects">
       <div className="container">
         <h2>{blok.title}</h2>
         <div className={styles.latest_projects_wrp}>

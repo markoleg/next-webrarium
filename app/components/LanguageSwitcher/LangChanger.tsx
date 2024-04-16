@@ -13,8 +13,9 @@ export default function LanguageChanger() {
   const currentPathname = usePathname();
   //get current locale from cookie NEXT_LOCALE
   useEffect(function () {
-    setCurrentLocale(nookies.get(null, "NEXT_LOCALE")?.NEXT_LOCALE);
-    // console.log(currentLocale);
+    nookies.get(null, "NEXT_LOCALE")?.NEXT_LOCALE
+      ? setCurrentLocale(nookies.get(null, "NEXT_LOCALE")?.NEXT_LOCALE)
+      : "uk";
   }, []);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

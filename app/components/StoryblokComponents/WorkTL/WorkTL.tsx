@@ -20,9 +20,9 @@ export default function WorkTL({ blok }: { blok: any }) {
           scrollTrigger: {
             trigger: sectionRef.current!,
             start: "top 80%",
-            end: "bottom 78%",
+            end: "center 78%",
             scrub: true,
-            markers: true,
+            markers: false,
           },
         }
       );
@@ -34,6 +34,7 @@ export default function WorkTL({ blok }: { blok: any }) {
       {...storyblokEditable(blok)}
       className={styles.work_tl_section}
       ref={sectionRef}
+      id="getstarted"
     >
       <div className="container">
         <div className={styles.worktl_cards_wrp}>

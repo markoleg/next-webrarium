@@ -11,7 +11,7 @@
   align-items: center;
   height: 100%;
   text-align: center;
-  gap: 8vw;
+  gap: 4rem;
 }
 .hero_title {
   font-size: clamp(40px, 6vw, 100px);
@@ -20,4 +20,23 @@
 .subtitle {
   font-weight: 300;
   font-size: clamp(18px, 2vw, 40px);
+}
+.cta_btns_wrp {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero_cta {
+  padding: 1rem;
+  border: 1px solid rgb(var(--foreground-rgb));
+  width: 15ch;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+}
+.hero_cta:hover {
+  color: rgb(var(--background-end-rgb));
+  background-color: rgb(var(--foreground-rgb));
+  transform: scale(1.05);
 }

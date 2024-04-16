@@ -5,11 +5,18 @@
   gap: 15px;
 }
 .lang_wrp input:checked ~ label {
-  text-decoration: underline;
+  text-decoration: 3px solid var(--main-color) underline;
 }
 .lang_wrp label {
   cursor: pointer;
 }
 .lang_wrp input {
   appearance: none;
+}
+
+@media (width<980px) {
+  .lang_wrp {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

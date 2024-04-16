@@ -49,7 +49,7 @@ export default function RootLayout({
         <body>
           <Header locale={locale} />
           {children}
-          <Footer />
+          <Footer locale={locale} />
         </body>
       </html>
     </StoryblokProvider>
