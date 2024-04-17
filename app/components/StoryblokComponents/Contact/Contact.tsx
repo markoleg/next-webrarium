@@ -5,7 +5,7 @@ import { sendEmail } from "@/app/utils/send-email";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import styles from "./Contact.module.css";
 import Link from "next/link";
-
+import { useState } from "react";
 export type FormData = {
   name: string;
   email: string;
@@ -13,12 +13,22 @@ export type FormData = {
 };
 
 const Contact = ({ blok }: { blok: any }) => {
-  const { register, handleSubmit } = useForm<FormData>();
+  const [submitted, setSubmitted] = useState();
+  const [sending, setSending] = useState(false);
+  const { register, handleSubmit, reset } = useForm<FormData>();
 
-  function onSubmit(data: FormData) {
-    sendEmail(data);
+  async function onSubmit(data: FormData) {
+    setSending(true);
+    try {
+      const response = await sendEmail(data);
+      setSubmitted(response === "Email sent" ? blok.success_message : "error");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setSending(false);
+      reset();
+    }
   }
-
   return (
     <section {...storyblokEditable(blok)} id="contact">
       <div className="container">
@@ -45,10 +55,11 @@ const Contact = ({ blok }: { blok: any }) => {
                   {...register("message", { required: true })}
                 ></textarea>
               </div>
-              <div>
+              <div className={styles.submit}>
                 <button className={styles.form_submit}>
-                  {blok.button_txt}
+                  {sending ? blok.message_sending : blok.button_txt}
                 </button>
+                {submitted ? <span>{submitted}</span> : null}
               </div>
             </form>
           </div>
@@ -79,7 +90,7 @@ const Contact = ({ blok }: { blok: any }) => {
                   />
                 </svg>
                 WhatsApp
-              </Link>{" "}
+              </Link>
             </div>
           </div>
         </div>

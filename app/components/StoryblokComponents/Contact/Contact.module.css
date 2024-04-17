@@ -53,6 +53,16 @@
   background: rgb(var(--background-end-rgb));
   transform: scale(1.05);
 }
+.submit {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.submit small {
+  color: var(--main-color);
+  padding: 1rem;
+  text-wrap: nowrap;
+}
 .form_right {
   display: flex;
   flex-direction: column;

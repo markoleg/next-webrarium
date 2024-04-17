@@ -5,7 +5,11 @@
   gap: 15px;
 }
 .lang_wrp input:checked ~ label {
-  text-decoration: 3px solid var(--main-color) underline;
+  /* text-decoration: 3px solid var(--main-color) underline; */
+  text-decoration-style: underline;
+  text-decoration-line: underline;
+  text-decoration-color: var(--main-color);
+  text-decoration-thickness: 3px;
 }
 .lang_wrp label {
   cursor: pointer;

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
@@ -16,11 +15,23 @@ storyblokInit({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
 });
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Webrarium Next App",
-  description: "We Webrarium",
+  title:
+    "Webrarium | Створюємо цифрові рішення, що допомагають вашому бізнесу зростати",
+  description:
+    "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
+  metadataBase: new URL("https://webrarium.com"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      uk: "/",
+      en: "/en",
+    },
+  },
+  openGraph: {
+    images: "/Webrarium_Cover-open-graph.webp",
+  },
 };
 
 export const viewport: Viewport = {

@@ -1,17 +1,18 @@
 import { FormData } from "@/app/components/StoryblokComponents/Contact/Contact";
 
-export function sendEmail(data: FormData) {
+export async function sendEmail(data: FormData) {
   const apiEndpoint = "/api/mail";
 
-  fetch(apiEndpoint, {
-    method: "POST",
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      console.log(response.message);
-    })
-    .catch((err) => {
-      console.log(err);
+  try {
+    const response = await fetch(apiEndpoint, {
+      method: "POST",
+      body: JSON.stringify(data),
     });
+
+    const jsonResponse = await response.json();
+    console.log(jsonResponse.message);
+    return jsonResponse.message;
+  } catch (err) {
+    console.log(err);
+  }
 }

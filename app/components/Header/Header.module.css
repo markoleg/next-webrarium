@@ -25,6 +25,7 @@
 .nav {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 .nav a:hover {
   text-decoration: 3px var(--main-color) solid underline;

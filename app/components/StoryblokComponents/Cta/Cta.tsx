@@ -26,7 +26,7 @@ export default function Cta({ blok }: { blok: any }) {
             WhatsApp
           </Link>
         </div>
-        <div className="divider"></div>
+        {/* <div className="divider"></div> */}
       </div>
     </section>
   );

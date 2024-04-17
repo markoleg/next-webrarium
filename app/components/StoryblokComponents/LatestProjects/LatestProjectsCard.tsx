@@ -15,6 +15,7 @@ export default function ProjectCard({
         src={blok.cover.filename}
         alt={blok.cover.alt}
         className={styles.bg}
+        loading="lazy"
       />
       <div className={styles.pc_content}>
         <h3>{blok.title}</h3>

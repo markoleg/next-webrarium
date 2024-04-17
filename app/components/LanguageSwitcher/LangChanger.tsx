@@ -8,12 +8,12 @@ import { ChangeEvent, useState, useEffect } from "react";
 import nookies from "nookies";
 
 export default function LanguageChanger() {
-  const [currentLocale, setCurrentLocale] = useState("");
+  const [currentLocale, setCurrentLocale] = useState("uk");
   const router = useRouter();
   const currentPathname = usePathname();
   //get current locale from cookie NEXT_LOCALE
   useEffect(function () {
-    nookies.get(null, "NEXT_LOCALE")?.NEXT_LOCALE
+    nookies.get(null, "NEXT_LOCALE").NEXT_LOCALE
       ? setCurrentLocale(nookies.get(null, "NEXT_LOCALE")?.NEXT_LOCALE)
       : "uk";
   }, []);

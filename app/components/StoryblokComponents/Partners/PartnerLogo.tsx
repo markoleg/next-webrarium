@@ -8,6 +8,7 @@ export default function PartnerLogo({ blok }: { blok: any }) {
         src={blok.logo_img.filename}
         alt={blok.logo_img.alt}
         className={styles.partner_logo}
+        loading="lazy"
       />
       <span>{blok.icon}</span>
     </div>

@@ -76,7 +76,7 @@
 .work_tl_card:not(:last-child) .line_end {
   display: none;
 }
-@media (max-width: 640px) {
+@media (max-width: 840px) {
   .worktl_cards_wrp {
     grid-template-columns: 1fr;
   }
