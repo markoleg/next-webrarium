@@ -22,14 +22,6 @@ export const metadata: Metadata = {
     "Webrarium | Створюємо цифрові рішення, що допомагають вашому бізнесу зростати",
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
-  metadataBase: new URL("https://webrarium.com"),
-  alternates: {
-    canonical: "/",
-    languages: {
-      uk: "/",
-      en: "/en",
-    },
-  },
   openGraph: {
     images: "/Webrarium_Cover-open-graph_UA.webp",
   },

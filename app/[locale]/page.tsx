@@ -3,20 +3,35 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 
 const englishMetadata: Metadata = {
-  title: "Webrarium | We create digital solutions that help your business grow",
+  title: "Webrarium | We create digital solutions",
   description:
     "Website development, chatbot development, marketing automation, product design, digital advertising.",
   openGraph: {
     images: "/Webrarium_Cover-open-graph.webp",
   },
+  metadataBase: new URL("https://webrarium.com"),
+  alternates: {
+    canonical: "/en",
+    languages: {
+      uk: "/",
+      en: "/en",
+    },
+  },
 };
 const ukrMetadata: Metadata = {
-  title:
-    "Webrarium | Створюємо цифрові рішення, що допомагають вашому бізнесу зростати",
+  title: "Webrarium | Створюємо цифрові рішення",
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
   openGraph: {
     images: "/Webrarium_Cover-open-graph_UA.webp",
+  },
+  metadataBase: new URL("https://webrarium.com"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      uk: "/",
+      en: "/en",
+    },
   },
 };
 
