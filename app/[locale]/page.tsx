@@ -3,13 +3,13 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 
 const englishMetadata: Metadata = {
+  metadataBase: new URL("https://webrarium.com"),
   title: "Webrarium | We create digital solutions",
   description:
     "Website development, chatbot development, marketing automation, product design, digital advertising.",
   openGraph: {
-    images: "/Webrarium_Cover-open-graph.webp",
+    images: "/en/Webrarium_Cover-open-graph.webp",
   },
-  metadataBase: new URL("https://webrarium.com"),
   alternates: {
     canonical: "/en",
     languages: {
@@ -19,13 +19,13 @@ const englishMetadata: Metadata = {
   },
 };
 const ukrMetadata: Metadata = {
+  metadataBase: new URL("https://webrarium.com"),
   title: "Webrarium | Створюємо цифрові рішення",
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
   openGraph: {
     images: "/Webrarium_Cover-open-graph_UA.webp",
   },
-  metadataBase: new URL("https://webrarium.com"),
   alternates: {
     canonical: "/",
     languages: {
