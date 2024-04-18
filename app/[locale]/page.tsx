@@ -8,7 +8,7 @@ const englishMetadata: Metadata = {
   description:
     "Website development, chatbot development, marketing automation, product design, digital advertising.",
   openGraph: {
-    images: "/en/Webrarium_Cover-open-graph.webp",
+    images: "/Webrarium_Cover-open-graph.webp",
   },
   alternates: {
     canonical: "/en",
