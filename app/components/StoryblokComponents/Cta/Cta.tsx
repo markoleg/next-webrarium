@@ -8,7 +8,12 @@ export default function Cta({ blok }: { blok: any }) {
       <div className="container">
         <div className={styles.cta_card}>
           <h2 className={styles.cta_title}>{blok.title}</h2>
-          <Link href={blok.wa_link.url} className={styles.cta_btn}>
+          <Link
+            href={blok.wa_link.url}
+            className={styles.cta_btn}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <svg
               width="31"
               height="32"

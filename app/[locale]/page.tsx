@@ -6,12 +6,18 @@ const englishMetadata: Metadata = {
   title: "Webrarium | We create digital solutions that help your business grow",
   description:
     "Website development, chatbot development, marketing automation, product design, digital advertising.",
+  openGraph: {
+    images: "/Webrarium_Cover-open-graph.webp",
+  },
 };
 const ukrMetadata: Metadata = {
   title:
     "Webrarium | Створюємо цифрові рішення, що допомагають вашому бізнесу зростати",
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
+  openGraph: {
+    images: "/Webrarium_Cover-open-graph_UA.webp",
+  },
 };
 
 export async function generateMetadata({ params }: any) {

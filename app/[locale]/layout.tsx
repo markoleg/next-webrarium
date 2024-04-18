@@ -6,6 +6,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/app/components/StoryblokComponents/StoryblokProvider";
 import { i18nConfig } from "@/i18nConfig";
 import type { Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 type PageParams = {
   locale: string;
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    images: "/Webrarium_Cover-open-graph.webp",
+    images: "/Webrarium_Cover-open-graph_UA.webp",
   },
 };
 
@@ -62,6 +63,7 @@ export default function RootLayout({
           {children}
           <Footer locale={locale} />
         </body>
+        <GoogleAnalytics gaId="G-J8ZW4RCXNG" />
       </html>
     </StoryblokProvider>
   );

@@ -6,8 +6,6 @@
   margin: auto;
 }
 .testimonial_card {
-  /* background: rgb(var(--foreground-rgb)); */
-  /* color: rgb(var(--background-end-rgb)); */
   border: 1px solid rgb(var(--foreground-rgb));
   border-radius: var(--border-radius);
   padding: var(--card-padding);
@@ -34,7 +32,7 @@
 .description {
   opacity: 0.75;
 }
-.testimonial_card svg {
+.testimonial_card svg.quote_mark {
   margin: 1rem 0;
 }
 .testimonial_card svg path {

@@ -59,7 +59,7 @@ const Contact = ({ blok }: { blok: any }) => {
                 <button className={styles.form_submit}>
                   {sending ? blok.message_sending : blok.button_txt}
                 </button>
-                {submitted ? <span>{submitted}</span> : null}
+                {submitted ? <small>{submitted}</small> : null}
               </div>
             </form>
           </div>
@@ -74,7 +74,11 @@ const Contact = ({ blok }: { blok: any }) => {
             </div>
             <div className={styles.form_right_div}>
               <div>{blok.wa_label}</div>
-              <Link href={blok.wa_link.url} className={styles.wa_btn}>
+              <Link
+                href={blok.wa_link.url}
+                className={styles.wa_btn}
+                target="_blank"
+              >
                 <svg
                   width="31"
                   height="32"
