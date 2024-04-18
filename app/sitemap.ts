@@ -5,13 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://webrarium.com",
       lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: "https://webrarium.com/en",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
+      alternates: {
+        languages: {
+          uk: "https://webrarium.com/",
+          en: "https://webrarium.com/en",
+        },
+      },
       priority: 1,
     },
   ];
