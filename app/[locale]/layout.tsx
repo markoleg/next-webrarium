@@ -18,6 +18,7 @@ storyblokInit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://webrarium.com"),
   title:
     "Webrarium | Створюємо цифрові рішення, що допомагають вашому бізнесу зростати",
   description:
@@ -43,10 +44,10 @@ export async function generateStaticParams(): Promise<PageParams[]> {
 export default function RootLayout({
   children,
   params: { locale },
-}: Readonly<{
+}: {
   children: React.ReactNode;
   params: PageParams;
-}>) {
+}) {
   return (
     <StoryblokProvider>
       <html lang={locale}>

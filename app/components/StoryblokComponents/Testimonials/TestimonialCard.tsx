@@ -46,8 +46,8 @@ export default function TestimonialCard({ blok }: { blok: any }) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M23.1111 26H2.88889C1.2934 26 0 24.7066 0 23.1111V2.88889C0 1.2934 1.2934 0 2.88889 0H23.1111C24.7066 0 26 1.2934 26 2.88889V23.1111C26 24.7066 24.7066 26 23.1111 26ZM2.88889 25H23.1111C24.1543 25 25 24.1543 25 23.1111V2.88889C25 1.84568 24.1543 1 23.1111 1H2.88889C1.84568 1 1 1.84568 1 2.88889V23.1111C1 24.1543 1.84568 25 2.88889 25Z"
               fill="none"
             />
