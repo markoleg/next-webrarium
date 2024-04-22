@@ -43,7 +43,7 @@ const jsonLd = {
   name: "Webrarium",
   image: "https://webrarium.com/Webrarium_Cover-open-graph_UA.jpg",
   description:
-    "Створюємо цифрові рішення, що допомагають вашому бізнесу зростати",
+    "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
   email: "wewebrarium@gmail.com",
   logo: "https://a.storyblok.com/f/276513/140x16/0ee6252073/webrarium-logo.svg",
   telephone: "+38 073 979 79 54",
@@ -62,11 +62,11 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <html lang={locale}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         <body>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <Header locale={locale} />
           {children}
           <Footer locale={locale} />

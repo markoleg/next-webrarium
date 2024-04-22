@@ -13,12 +13,15 @@
   text-align: center;
   gap: 4rem;
 }
+.hero_wrp h1 {
+  font-size: inherit;
+}
 .hero_title {
   font-size: clamp(40px, 6vw, 100px);
   text-align: center;
 }
 .subtitle {
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(18px, 2vw, 40px);
 }
 .cta_btns_wrp {

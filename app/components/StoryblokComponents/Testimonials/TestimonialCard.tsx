@@ -37,7 +37,7 @@ export default function TestimonialCard({ blok }: { blok: any }) {
       </svg>
       <div className={styles.testimonial}>{render(blok.testimonial)}</div>
       {blok.fb_link ? (
-        <Link href={blok.fb_link.url} target="_blank">
+        <Link href={blok.fb_link.url} target="_blank" aria-label="Facebook">
           <svg
             width="26"
             height="26"

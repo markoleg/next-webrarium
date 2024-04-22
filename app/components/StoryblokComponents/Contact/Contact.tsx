@@ -39,13 +39,18 @@ const Contact = ({ blok }: { blok: any }) => {
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
               <div className={styles.field}>
                 <label htmlFor="name">{blok.name_label}</label>
-                <input type="text" {...register("name", { required: true })} />
+                <input
+                  type="text"
+                  {...register("name", { required: true })}
+                  id="name"
+                />
               </div>
               <div className={styles.field}>
                 <label htmlFor="email">{blok.email_label}</label>
                 <input
                   type="email"
                   {...register("email", { required: true })}
+                  id="email"
                 />
               </div>
               <div className={styles.field}>
@@ -53,6 +58,7 @@ const Contact = ({ blok }: { blok: any }) => {
                 <textarea
                   rows={4}
                   {...register("message", { required: true })}
+                  id="message"
                 ></textarea>
               </div>
               <div className={styles.submit}>

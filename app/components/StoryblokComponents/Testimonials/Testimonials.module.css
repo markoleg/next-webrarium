@@ -44,3 +44,6 @@
 .testimonial {
   margin-bottom: 1rem;
 }
+.testimonial_card a:hover svg {
+  transform: scale(1.05);
+}

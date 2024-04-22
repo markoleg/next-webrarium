@@ -25,7 +25,15 @@ export default async function Footer({ locale }: { locale: string }) {
           </ul>
         </nav>
         <p className={styles.copyright}>
-          <small>&copy;{year} Webrarium. All right reserved.</small>
+          <small>
+            &copy;{year} Webrarium.
+            {locale === "en" ? " All rights reserved." : " Всі права захищено."}
+            <Link href="/privacy-policy">
+              {locale === "en"
+                ? " Privacy Policy"
+                : " Політика конфіденційності"}
+            </Link>
+          </small>
         </p>
       </div>
     </footer>

@@ -18,6 +18,8 @@ import PartnerLogo from "./Partners/PartnerLogo";
 import Testimonials from "./Testimonials/Testimonials";
 import TestimonialCard from "./Testimonials/TestimonialCard";
 import Contact from "./Contact/Contact";
+import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
+import CalBlock from "./CalBlock";
 
 const components = {
   page: Page,
@@ -37,6 +39,8 @@ const components = {
   testimonials: Testimonials,
   testimonial_card: TestimonialCard,
   contact: Contact,
+  privacy_policy: PrivacyPolicy,
+  cal: CalBlock,
 };
 
 storyblokInit({

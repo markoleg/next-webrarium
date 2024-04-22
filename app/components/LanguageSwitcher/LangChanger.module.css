@@ -16,6 +16,8 @@
 }
 .lang_wrp input {
   appearance: none;
+  width: 0;
+  height: 0;
 }
 
 @media (width<980px) {
