@@ -1,3 +1,4 @@
+"use client";
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 export default function CalBlock() {
@@ -16,4 +17,5 @@ export default function CalBlock() {
       });
     })();
   }, []);
+  return <></>;
 }

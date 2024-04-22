@@ -7,6 +7,7 @@ import StoryblokProvider from "@/app/components/StoryblokComponents/StoryblokPro
 import { i18nConfig } from "@/i18nConfig";
 import type { Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import CalBlock from "@/app/components/CalBlock";
 
 type PageParams = {
   locale: string;
@@ -67,6 +68,7 @@ export default function RootLayout({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
+          <CalBlock />
           <Header locale={locale} />
           {children}
           <Footer locale={locale} />
