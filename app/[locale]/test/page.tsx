@@ -1,3 +1,3 @@
-export default function page() {
-  return <div>page</div>;
+export default function page({ params: { locale } }: any) {
+  return <div>page{locale}</div>;
 }
