@@ -48,7 +48,7 @@
 }
 .case_btn:hover {
   transform: scale(1.05);
-  background: rgb(var(--background-start-rgb));
+  background: black;
 }
 @media (width<700px) {
   .latest_projects_wrp {
