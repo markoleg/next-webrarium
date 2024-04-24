@@ -8,7 +8,7 @@ const englishMetadata: Metadata = {
   description:
     "Website development, chatbot development, marketing automation, product design, digital advertising.",
   openGraph: {
-    images: "/Webrarium_Cover-open-graph.webp",
+    images: "/OpenGraph_Eng.jpg",
   },
   alternates: {
     canonical: "/en",
@@ -24,7 +24,7 @@ const ukrMetadata: Metadata = {
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
   openGraph: {
-    images: "/Webrarium_Cover-open-graph_UA.webp",
+    images: "/OpenGraph_UA.jpg",
   },
   alternates: {
     canonical: "/",

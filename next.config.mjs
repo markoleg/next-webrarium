@@ -9,6 +9,20 @@ const nextConfig = {
       },
     ],
   },
+  redirects: () => {
+    return [
+      {
+        source: "/ua",
+        destination: "/uk",
+        permanent: true,
+      },
+      {
+        source: "/en/ua",
+        destination: "/en",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

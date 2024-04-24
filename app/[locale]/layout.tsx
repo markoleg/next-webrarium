@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
   openGraph: {
-    images: "/Webrarium_Cover-open-graph_UA.webp",
+    images: "/OpenGraph_UA.jpg",
   },
 };
 
@@ -42,9 +42,20 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Webrarium",
-  image: "https://webrarium.com/Webrarium_Cover-open-graph_UA.jpg",
+  image: "https://webrarium.com/OpenGraph_UA.jpg",
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
+  email: "wewebrarium@gmail.com",
+  logo: "https://a.storyblok.com/f/276513/140x16/0ee6252073/webrarium-logo.svg",
+  telephone: "+38 073 979 79 54",
+};
+const jsonLdEn = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Webrarium",
+  image: "https://webrarium.com/OpenGraph_Eng.jpg",
+  description:
+    "Website development, chatbot development, marketing automation, product design, digital advertising.",
   email: "wewebrarium@gmail.com",
   logo: "https://a.storyblok.com/f/276513/140x16/0ee6252073/webrarium-logo.svg",
   telephone: "+38 073 979 79 54",
@@ -66,7 +77,11 @@ export default function RootLayout({
         <body>
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={
+              locale === "en"
+                ? { __html: JSON.stringify(jsonLdEn) }
+                : { __html: JSON.stringify(jsonLd) }
+            }
           />
           <CalBlock />
           <Header locale={locale} />
