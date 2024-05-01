@@ -18,8 +18,8 @@ export default function HeaderS({ blok }: { blok: any }) {
           <Link href="/" className={styles.brand}>
             <Image
               src={blok.logo.filename}
-              width={150}
-              height={17}
+              width={144}
+              height={21}
               alt="webrarium logo"
               className="brand_img"
             />

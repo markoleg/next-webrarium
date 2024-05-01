@@ -7,14 +7,14 @@ export default async function Footer({ locale }: { locale: string }) {
   let year = date.getFullYear();
   // get navlinks from SB header component
   const data = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/header?version=draft&token=FG91Diyiq9BKP4moQrYgewtt&language=${locale}`
+    `https://api.storyblok.com/v2/cdn/stories/header?version=draft&token=${process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN}&language=${locale}`
   ).then((response) => response.json());
 
   return (
     <footer>
       <div className="container">
         <div className="divider"></div>
-        <div className={styles.f_brand}>WEBRARIUM</div>
+        <div className={styles.f_brand}>webrarium</div>
         <nav className={styles.f_nav}>
           <ul>
             {data.story.content.nav.map((navlink: any) => (
