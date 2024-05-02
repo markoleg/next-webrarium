@@ -51,7 +51,7 @@
   background: black;
 }
 @media (width<700px) {
-  .latest_projects_wrp {
+  .projects_wrp {
     grid-template-columns: 1fr;
   }
   .pc_content {

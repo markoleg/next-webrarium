@@ -24,7 +24,7 @@ const Contact = ({ blok }: { blok: any }) => {
     try {
       const response = await sendEmail(data);
       setSubmitted(response === "Email sent" ? blok.success_message : "error");
-      sendGAEvent({ event: "contact_form_submitted", value: "xyz" });
+      sendGAEvent("event", "cf_submit", { value: "contact_form_submit" });
     } catch (error) {
       console.error(error);
     } finally {
