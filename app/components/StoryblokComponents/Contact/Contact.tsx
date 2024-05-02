@@ -6,6 +6,8 @@ import { storyblokEditable } from "@storyblok/react/rsc";
 import styles from "./Contact.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
+
 export type FormData = {
   name: string;
   email: string;
@@ -22,6 +24,7 @@ const Contact = ({ blok }: { blok: any }) => {
     try {
       const response = await sendEmail(data);
       setSubmitted(response === "Email sent" ? blok.success_message : "error");
+      sendGAEvent({ event: "contact_form_submitted", value: "xyz" });
     } catch (error) {
       console.error(error);
     } finally {
