@@ -6,7 +6,7 @@ export default function LatestProjects({ blok }: { blok: any }) {
     <section {...storyblokEditable(blok)} id="projects">
       <div className="container">
         <h2>{blok.title}</h2>
-        <div className={styles.latest_projects_wrp}>
+        <div className={styles.projects_wrp}>
           {blok.latest_projects.map((card: any) => (
             <StoryblokComponent
               blok={card}

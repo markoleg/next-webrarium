@@ -19,6 +19,8 @@ import Testimonials from "./Testimonials/Testimonials";
 import TestimonialCard from "./Testimonials/TestimonialCard";
 import Contact from "./Contact/Contact";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
+import Project from "./ProjectPage/Project";
+import ProjectsGrid from "./ProjectPage/ProjectsGrid";
 
 const components = {
   page: Page,
@@ -39,6 +41,8 @@ const components = {
   testimonial_card: TestimonialCard,
   contact: Contact,
   privacy_policy: PrivacyPolicy,
+  project: Project,
+  projects_grid: ProjectsGrid,
 };
 
 storyblokInit({

@@ -13,6 +13,7 @@ export default function Cta({ blok }: { blok: any }) {
             className={styles.cta_btn}
             target="_blank"
             rel="noreferrer noopener"
+            id="cta_wa_btn"
           >
             <svg
               width="31"

@@ -36,13 +36,18 @@ const Contact = ({ blok }: { blok: any }) => {
         <p className={styles.form_subtitle}>{blok.description}</p>
         <div className={styles.form_wrp}>
           <div className={styles.form_left}>
-            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className={styles.form}
+              id="contact_form"
+            >
               <div className={styles.field}>
                 <label htmlFor="name">{blok.name_label}</label>
                 <input
                   type="text"
                   {...register("name", { required: true })}
                   id="name"
+                  autoComplete="name"
                 />
               </div>
               <div className={styles.field}>
@@ -51,6 +56,7 @@ const Contact = ({ blok }: { blok: any }) => {
                   type="email"
                   {...register("email", { required: true })}
                   id="email"
+                  autoComplete="email"
                 />
               </div>
               <div className={styles.field}>
@@ -62,7 +68,11 @@ const Contact = ({ blok }: { blok: any }) => {
                 ></textarea>
               </div>
               <div className={styles.submit}>
-                <button className={styles.form_submit}>
+                <button
+                  className={styles.form_submit}
+                  type="submit"
+                  id="form_submit_btn"
+                >
                   {sending ? blok.message_sending : blok.button_txt}
                 </button>
                 {submitted ? <small>{submitted}</small> : null}
@@ -72,11 +82,23 @@ const Contact = ({ blok }: { blok: any }) => {
           <div className={styles.form_right}>
             <div className={styles.form_right_div}>
               <div>{blok.call_txt}</div>
-              <a href={`tel:${blok.call_num}`}>{blok.call_num}</a>
+              <a
+                href={`tel:${blok.call_num}`}
+                title="Call a mobile number"
+                id="call_phone"
+              >
+                {blok.call_num}
+              </a>
             </div>
             <div className={styles.form_right_div}>
               <div>{blok.mail_label}</div>
-              <a href={`mailto:${blok.mail_address}`}>{blok.mail_address}</a>
+              <a
+                href={`mailto:${blok.mail_address}`}
+                title="Send email"
+                id="send_email"
+              >
+                {blok.mail_address}
+              </a>
             </div>
             <div className={styles.form_right_div}>
               <div>{blok.wa_label}</div>
@@ -84,6 +106,8 @@ const Contact = ({ blok }: { blok: any }) => {
                 href={blok.wa_link.url}
                 className={styles.wa_btn}
                 target="_blank"
+                id="contact_wa_btn"
+                title="WhatsApp Chat"
               >
                 <svg
                   width="31"

@@ -3,7 +3,7 @@
   height: 1px;
   background-color: white;
 }
-.latest_projects_wrp {
+.projects_wrp {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing);
@@ -53,12 +53,6 @@
 @media (width<700px) {
   .latest_projects_wrp {
     grid-template-columns: 1fr;
-  }
-  .project_card {
-    background-size: cover !important;
-  }
-  .project_card:hover {
-    background-size: cover !important;
   }
   .pc_content {
     opacity: 1;

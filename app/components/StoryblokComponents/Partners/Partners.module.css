@@ -25,7 +25,6 @@
 .partner_logo_card span {
   max-width: 0;
   opacity: 0;
-  /* color: rgb(var(--background-end-rgb)); */
   overflow: hidden;
   transition: all 0.1s ease;
 }
@@ -37,11 +36,10 @@
   max-width: none;
   opacity: 1;
 }
-@media (prefers-color-scheme: dark) {
-  .partner_logo {
-    filter: invert(1);
-  }
+.partner_logo {
+  filter: invert(1);
 }
+
 @media (width<700px) {
   .partners_logos_wrp {
     grid-template-columns: 1fr 1fr;
