@@ -1,5 +1,7 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
 import styles from "./Hero.module.css";
+import Image from "next/image";
+import { relative } from "path";
 
 export default function Hero({ blok }: { blok: any }) {
   return (
@@ -19,7 +21,20 @@ export default function Hero({ blok }: { blok: any }) {
               {blok.hero_cta_txt2}
             </a>
           </div>
-          <div className="divider"></div>
+          <div className="divider">
+            <Image
+              style={{
+                position: "absolute",
+                bottom: 0,
+                width: "100px",
+                height: "auto",
+              }}
+              src="/pupa.webp"
+              width={256}
+              height={137}
+              alt="logo variant"
+            />
+          </div>
         </div>
       </div>
     </section>
