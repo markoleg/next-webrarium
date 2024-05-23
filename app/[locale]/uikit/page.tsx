@@ -1,18 +1,27 @@
 import styles from "./uikit.module.css";
 import Image from "next/image";
+import Delta from "@/app/components/Delta/Delta";
 
-export default function UiKit() {
+export default function UiKit({ params: { locale } }: any) {
   return (
     <main>
+      <Delta />
       <div className={`container ${styles.container_min}`}>
         <section>
           <div className={styles.hero_wrp}>
             <div className={styles.hero_left}>
               <h1>Webrarium Logo</h1>
-              <p>
-                All necessary logo files. Please do not change its appearance,
-                but rather choose from the list of proposed options.
-              </p>
+              {locale === "en" ? (
+                <p>
+                  All necessary logo files. Please do not change its appearance,
+                  but rather choose from the list of proposed options.
+                </p>
+              ) : (
+                <p>
+                  Усі необхідні файли логотипу. Будь ласка, не змінюйте його
+                  вигляд, а краще оберіть із списку, запропонованих варіантів.
+                </p>
+              )}
             </div>
             <div className={styles.hero_right}>
               <div>
@@ -43,7 +52,7 @@ export default function UiKit() {
           </div>
         </section>
         <section>
-          <h2>Main logo</h2>
+          {locale === "en" ? <h2>Main logo</h2> : <h2>Головне лого</h2>}
           <div className={styles.main_logo_grid}>
             <Image
               src="/uikit/logo2.svg"
@@ -72,7 +81,7 @@ export default function UiKit() {
           </div>
         </section>
         <section>
-          <h2>Compact logo</h2>
+          {locale === "en" ? <h2>Compact logo</h2> : <h2>Компактне лого</h2>}
           <div className={styles.cl_grid}>
             <Image
               src="/uikit/cl4.svg"
@@ -104,12 +113,7 @@ export default function UiKit() {
               height={250}
               alt="logo variant"
             />
-            <Image
-              src="/sticker.webp"
-              width={250}
-              height={250}
-              alt="logo variant"
-            />
+            <Image src="/sticker.webp" width={250} height={250} alt="Pupa" />
           </div>
           <div className={styles.btn_wrp}>
             <a href="/uikit/we-logos.zip" download className={styles.button}>

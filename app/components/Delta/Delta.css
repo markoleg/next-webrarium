@@ -1,0 +1,8 @@
+@media (width<900px) {
+  .delta {
+    display: none;
+  }
+}
+.delta {
+  cursor: grab;
+}

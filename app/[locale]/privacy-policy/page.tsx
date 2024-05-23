@@ -50,7 +50,7 @@ async function fetchData(locale: string) {
   } = { version: "draft", language: locale };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/privacy-policy`, sbParams, {
+  return await storyblokApi.get(`cdn/stories/privacy-policy`, sbParams, {
     cache: "no-store",
   });
 }

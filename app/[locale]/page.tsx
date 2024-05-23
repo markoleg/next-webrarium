@@ -47,8 +47,17 @@ async function fetchData(locale: string) {
   let sbParams: {
     version: "published" | "draft";
     language: any;
-  } = { version: "draft", language: locale };
+    resolve_relations: any;
+  } = {
+    version: "draft",
+    language: locale,
+    resolve_relations: [
+      "projects_grid.projects_list,services_grid.services_list",
+    ],
+  };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams, { cache: "no-store" });
+  return await storyblokApi.get(`cdn/stories/home`, sbParams, {
+    cache: "no-store",
+  });
 }

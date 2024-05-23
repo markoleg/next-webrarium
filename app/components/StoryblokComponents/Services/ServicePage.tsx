@@ -1,15 +1,9 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
-export default function Project({ blok }: { blok: any }) {
+export default function Service({ blok }: { blok: any }) {
   return (
     <main {...storyblokEditable(blok)}>
-      <section
-        style={{
-          backgroundImage: `url(${blok.cover.filename})`,
-          mixBlendMode: "hard-light",
-          backgroundSize: "cover",
-        }}
-      >
+      <section>
         <div className="container">
           <h1>{blok.title}</h1>
           <p>{blok.description}</p>

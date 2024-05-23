@@ -55,7 +55,7 @@ async function fetchData(locale: string) {
   };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/projects`, sbParams, {
+  return await storyblokApi.get(`cdn/stories/projects`, sbParams, {
     cache: "no-store",
   });
 }

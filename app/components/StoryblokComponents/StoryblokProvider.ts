@@ -21,6 +21,8 @@ import Contact from "./Contact/Contact";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import Project from "./ProjectPage/Project";
 import ProjectsGrid from "./ProjectPage/ProjectsGrid";
+import Service from "./Services/ServicePage";
+import ServicesGrid from "./Services/ServicesGrid";
 
 const components = {
   page: Page,
@@ -43,6 +45,8 @@ const components = {
   privacy_policy: PrivacyPolicy,
   project: Project,
   projects_grid: ProjectsGrid,
+  service: Service,
+  services_grid: ServicesGrid,
 };
 
 storyblokInit({
