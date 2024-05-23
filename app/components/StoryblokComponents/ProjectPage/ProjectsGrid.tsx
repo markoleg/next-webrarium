@@ -6,6 +6,7 @@ export default function ProjectsGrid({ blok }: { blok: any }) {
   return (
     <section {...storyblokEditable(blok)}>
       <div className="container">
+        {blok.title ? <h2>{blok.title}</h2> : null}
         <div className={styles.projects_wrp}>
           {blok.projects_list.map((project: any) => (
             <ProjectCard
@@ -23,7 +24,7 @@ export default function ProjectsGrid({ blok }: { blok: any }) {
 function ProjectCard({ blok, btntxt }: { blok: any; btntxt: string }) {
   const projectLink = `/${blok.full_slug}`;
   return (
-    <div {...storyblokEditable(blok)} className={styles.project_card}>
+    <div className={styles.project_card}>
       <img
         src={blok.content.cover.filename}
         alt={blok.content.cover.alt}

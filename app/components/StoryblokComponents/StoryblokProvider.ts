@@ -23,9 +23,11 @@ import Project from "./ProjectPage/Project";
 import ProjectsGrid from "./ProjectPage/ProjectsGrid";
 import Service from "./Services/ServicePage";
 import ServicesGrid from "./Services/ServicesGrid";
+import h1Heading from "./h1_heading";
 
 const components = {
   page: Page,
+  h1_heading: h1Heading,
   hero: Hero,
   header: HeaderS,
   nav_link: NavLink,

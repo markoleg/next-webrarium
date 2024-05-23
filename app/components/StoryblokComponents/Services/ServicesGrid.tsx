@@ -7,7 +7,7 @@ export default function ServicesGrid({ blok }: { blok: any }) {
   return (
     <section {...storyblokEditable(blok)}>
       <div className="container">
-        <h2>{blok.title}</h2>
+        {blok.title ? <h2>{blok.title}</h2> : null}
         <div className={styles.focus_grid}>
           {blok.services_list.map((service: any) => (
             <ServiceCard blok={service} key={service.id} />
@@ -22,7 +22,7 @@ function ServiceCard({ blok }: { blok: any }) {
   const serviceLink = `/${blok.full_slug}`;
   return (
     <Link href={serviceLink}>
-      <div {...storyblokEditable(blok)} className={styles.focus_card}>
+      <div className={styles.focus_card}>
         <h3>{blok.content.title}</h3>
         <br />
         <div className={styles.divider}></div>

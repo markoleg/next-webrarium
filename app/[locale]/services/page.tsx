@@ -38,7 +38,7 @@ import StoryblokStory from "@storyblok/react/story";
 // export async function generateMetadata({ params }: any) {
 //   return params.locale === "en" ? englishMetadata : ukrMetadata;
 // }
-export default async function Projects({ params: { locale } }: any) {
+export default async function Services({ params: { locale } }: any) {
   const { data } = await fetchData(locale);
 
   return <StoryblokStory story={data.story} />;
@@ -51,11 +51,11 @@ async function fetchData(locale: string) {
   } = {
     version: "draft",
     language: locale,
-    resolve_relations: ["projects_grid.projects_list"],
+    resolve_relations: ["services_grid.services_list"],
   };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/projects`, sbParams, {
+  return storyblokApi.get(`cdn/stories/services`, sbParams, {
     cache: "no-store",
   });
 }

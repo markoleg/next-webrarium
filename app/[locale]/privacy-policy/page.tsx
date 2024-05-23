@@ -1,6 +1,7 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
+import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
 const englishMetadata: Metadata = {
   metadataBase: new URL("https://webrarium.com"),
@@ -33,6 +34,11 @@ const ukrMetadata: Metadata = {
   },
 };
 
+storyblokInit({
+  // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+  use: [apiPlugin],
+});
 export async function generateMetadata({ params }: any) {
   return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
