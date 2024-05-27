@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: "/OpenGraph_UA.jpg",
   },
-  robots: "nosnippet",
+  // robots: "nosnippet",
 };
 
 export const viewport: Viewport = {
