@@ -43,9 +43,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Webrarium",
-  image: "https://webrarium.com/OpenGraph_UA.jpg",
   description:
     "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
+  image: "https://webrarium.com/OpenGraph_UA.jpg",
   email: "wewebrarium@gmail.com",
   logo: "https://a.storyblok.com/f/276513/140x16/0ee6252073/webrarium-logo.svg",
   telephone: "+38 073 979 79 54",
@@ -54,16 +54,16 @@ const jsonLdEn = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Webrarium",
-  image: "https://webrarium.com/OpenGraph_Eng.jpg",
   description:
     "Website development, chatbot development, marketing automation, product design, digital advertising.",
+  image: "https://webrarium.com/OpenGraph_Eng.jpg",
   email: "wewebrarium@gmail.com",
   logo: "https://a.storyblok.com/f/276513/140x16/0ee6252073/webrarium-logo.svg",
   telephone: "+38 073 979 79 54",
 };
-// export async function generateStaticParams(): Promise<PageParams[]> {
-//   return i18nConfig.locales.map((locale) => ({ locale }));
-// }
+export async function generateStaticParams(): Promise<PageParams[]> {
+  return i18nConfig.locales.map((locale) => ({ locale }));
+}
 
 export default function RootLayout({
   children,
