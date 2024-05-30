@@ -3,15 +3,15 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LPT from "@/app/components/lottietest";
-export async function generateStaticParams() {
-  const services = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/services/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&cv=1716916202&resolve_relations=services_grid.services_list`
-  ).then((res) => res.json());
+// export async function generateStaticParams() {
+//   const services = await fetch(
+//     `https://api.storyblok.com/v2/cdn/stories/services/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&cv=1716916202&resolve_relations=services_grid.services_list`
+//   ).then((res) => res.json());
 
-  return services.rels.map((service: any) => ({
-    slug: service.slug,
-  }));
-}
+//   return services.rels.map((service: any) => ({
+//     slug: service.slug,
+//   }));
+// }
 export default async function ServicePage({ params: { locale, slug } }: any) {
   try {
     const { data } = await fetchData(locale, slug);

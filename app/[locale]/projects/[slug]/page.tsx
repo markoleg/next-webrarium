@@ -2,15 +2,15 @@ import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  const projects = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&cv=1716916202&resolve_relations=projects_grid.projects_list`
-  ).then((res) => res.json());
+// export async function generateStaticParams() {
+//   const projects = await fetch(
+//     `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&cv=1716916202&resolve_relations=projects_grid.projects_list`
+//   ).then((res) => res.json());
 
-  return projects.rels.map((project: any) => ({
-    slug: project.slug,
-  }));
-}
+//   return projects.rels.map((project: any) => ({
+//     slug: project.slug,
+//   }));
+// }
 
 async function fetchData(locale: string, slug: string) {
   let sbParams: {
