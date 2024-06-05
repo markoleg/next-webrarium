@@ -24,6 +24,8 @@ import ProjectsGrid from "./ProjectPage/ProjectsGrid";
 import Service from "./Services/ServicePage";
 import ServicesGrid from "./Services/ServicesGrid";
 import h1Heading from "./h1_heading";
+import ServiceDetails from "./ServicePage/ServiceDetails";
+import ServiceDetailsCard from "./ServicePage/ServiceDetailsCard";
 
 const components = {
   page: Page,
@@ -49,6 +51,8 @@ const components = {
   projects_grid: ProjectsGrid,
   service: Service,
   services_grid: ServicesGrid,
+  service_details: ServiceDetails,
+  service_details_card: ServiceDetailsCard,
 };
 
 storyblokInit({
