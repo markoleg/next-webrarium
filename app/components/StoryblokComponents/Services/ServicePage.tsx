@@ -1,6 +1,5 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
-// import { render } from "storyblok-rich-text-react-renderer";
-import style from "@/app/components/StoryblokComponents/ServicePage/ServiceDetails.module.css";
+import style from "@/app/components/StoryblokComponents/ServicePage/ServicePage.module.css";
 
 export default function Service({ blok }: { blok: any }) {
   return (

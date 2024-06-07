@@ -8,22 +8,6 @@ export default function LP({ index }: { index: number }) {
   });
   // const ref = useRef<LottiePlayer>(null);
   const ref = useRef(null);
-  //   add html element
-  // useEffect(() => {
-  //   const lottie = document.createElement("lottie-player");
-  //   lottie.setAttribute("src", "/2.json");
-  //   lottie.setAttribute("background", "transparent");
-  //   lottie.setAttribute("mode", "normal");
-  //   lottie.setAttribute("autoplay", "true");
-  //   lottie.setAttribute("loop", "true");
-  //   lottie.setAttribute("style", "width: 100%; height: 100%;");
-  //   document.body.appendChild(lottie);
-  //   //   add event listener
-  //   lottie.addEventListener("loadeddata", () => {
-  //     ref.current = lottie as LottiePlayer;
-  //   });
-  // }, []);
-  // const ref2 = useRef(null);
 
   return (
     <div>

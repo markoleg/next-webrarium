@@ -1,7 +1,6 @@
-// "use client";
 import { storyblokEditable } from "@storyblok/react/rsc";
 import { render } from "storyblok-rich-text-react-renderer";
-import styles from "./ServiceDetails.module.css";
+import styles from "./ServicePage.module.css";
 import LP from "@/app/components/LottiePlayer";
 
 export default function ServiceDetailsCard({
