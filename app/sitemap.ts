@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${BASEURL}/en`,
     },
-    ...routes,
+    {
+      url: `${BASEURL}/privacy-policy`,
+    },
+    {
+      url: `${BASEURL}/en/privacy-policy`,
+    },
+    // ...routes,
   ];
 }
