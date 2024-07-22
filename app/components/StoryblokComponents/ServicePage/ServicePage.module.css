@@ -47,6 +47,7 @@
   }
   .service_need_cards_wrp {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 .service_need_wrp img {

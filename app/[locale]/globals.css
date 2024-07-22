@@ -153,9 +153,6 @@ p:not(:last-child) {
   :root {
     --card-padding: 1rem;
   }
-  .canv_wrp {
-    display: none;
-  }
   section {
     padding: 20vw 0;
   }

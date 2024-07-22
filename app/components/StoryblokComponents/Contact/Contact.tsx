@@ -12,6 +12,7 @@ export type FormData = {
   name: string;
   email: string;
   message: string;
+  honeypot: any;
 };
 
 const Contact = ({ blok }: { blok: any }) => {
@@ -20,6 +21,11 @@ const Contact = ({ blok }: { blok: any }) => {
   const { register, handleSubmit, reset } = useForm<FormData>();
 
   async function onSubmit(data: FormData) {
+    if (data.honeypot) {
+      // honeypot field was filled in, likely a spam submission
+      console.log("Spam submission detected!");
+      return;
+    }
     setSending(true);
     try {
       const response = await sendEmail(data);
@@ -44,6 +50,14 @@ const Contact = ({ blok }: { blok: any }) => {
               className={styles.form}
               id="contact_form"
             >
+              <div className={styles.field}>
+                <input
+                  type="text"
+                  id="honeypot"
+                  style={{ display: "none" }}
+                  {...register("honeypot")}
+                />
+              </div>
               <div className={styles.field}>
                 <label htmlFor="name">{blok.name_label}</label>
                 <input
