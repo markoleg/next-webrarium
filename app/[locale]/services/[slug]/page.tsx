@@ -3,6 +3,7 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import GlobalContacts from "@/app/components/GlobalContacts";
 
 // export async function generateStaticParams() {
 //   const services = await fetch(
@@ -21,7 +22,12 @@ storyblokInit({
 export default async function ServicePage({ params: { locale, slug } }: any) {
   try {
     const { data } = await fetchData(locale, slug);
-    return <StoryblokStory story={data.story} />;
+    return (
+      <>
+        <StoryblokStory story={data.story} />
+        <GlobalContacts locale={locale} />
+      </>
+    );
   } catch {
     // return 404 error
     return notFound();

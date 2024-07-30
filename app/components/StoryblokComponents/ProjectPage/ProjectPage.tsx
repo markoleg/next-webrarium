@@ -1,6 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 
-export default function Project({ blok }: { blok: any }) {
+export default function ProjectPage({ blok }: { blok: any }) {
   return (
     <main {...storyblokEditable(blok)}>
       <section

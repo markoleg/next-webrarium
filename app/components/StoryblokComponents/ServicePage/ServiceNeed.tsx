@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function ServiceNeed({ blok }: { blok: any }) {
   let pattern = /^\/\//;
   return (
-    <section {...storyblokEditable(blok)} id="services">
+    <section {...storyblokEditable(blok)}>
       <div className="container">
         <h2>{blok.title}</h2>
         <div className={styles.service_need_wrp}>

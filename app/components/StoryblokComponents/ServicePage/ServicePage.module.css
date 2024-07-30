@@ -63,3 +63,22 @@
     transparent 100%
   );
 }
+/* service instruments */
+.service_instruments_card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing);
+}
+.instruments_list {
+  margin-top: 1rem;
+}
+.instruments_logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.instruments_logo_wrp {
+  padding: 1rem;
+  border: 1px solid rgb(var(--foreground-rgb));
+  border-radius: var(--border-radius);
+}

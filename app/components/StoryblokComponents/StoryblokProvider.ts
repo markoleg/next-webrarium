@@ -19,15 +19,17 @@ import Testimonials from "./Testimonials/Testimonials";
 import TestimonialCard from "./Testimonials/TestimonialCard";
 import Contact from "./Contact/Contact";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
-import Project from "./ProjectPage/Project";
+import ProjectPage from "./ProjectPage/ProjectPage";
 import ProjectsGrid from "./ProjectPage/ProjectsGrid";
-import Service from "./Services/ServicePage";
+import ServicePage from "./ServicePage/ServicePage";
 import ServicesGrid from "./Services/ServicesGrid";
 import h1Heading from "./h1_heading";
 import ServiceDetails from "./ServicePage/ServiceDetails";
 import ServiceDetailsCard from "./ServicePage/ServiceDetailsCard";
 import ServiceNeed from "./ServicePage/ServiceNeed";
 import ServiceNeedCard from "./ServicePage/ServiceNeedCard";
+import ServiceInstruments from "./ServicePage/ServiceInstruments";
+import ServiceInstrumentsCard from "./ServicePage/ServiceInstrumentsCard";
 
 const components = {
   page: Page,
@@ -49,14 +51,16 @@ const components = {
   testimonial_card: TestimonialCard,
   contact: Contact,
   privacy_policy: PrivacyPolicy,
-  project: Project,
+  project: ProjectPage,
   projects_grid: ProjectsGrid,
-  service: Service,
+  service: ServicePage,
   services_grid: ServicesGrid,
   service_details: ServiceDetails,
   service_details_card: ServiceDetailsCard,
   service_need: ServiceNeed,
   service_need_card: ServiceNeedCard,
+  service_instruments: ServiceInstruments,
+  service_instruments_card: ServiceInstrumentsCard,
 };
 
 storyblokInit({
