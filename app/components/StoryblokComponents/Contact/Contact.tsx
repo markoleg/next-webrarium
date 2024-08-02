@@ -7,6 +7,8 @@ import styles from "./Contact.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import axios from "axios";
 
 export type FormData = {
   name: string;
@@ -19,6 +21,7 @@ const Contact = ({ blok }: { blok: any }) => {
   const [submitted, setSubmitted] = useState();
   const [sending, setSending] = useState(false);
   const { register, handleSubmit, reset } = useForm<FormData>();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   async function onSubmit(data: FormData) {
     if (data.honeypot) {
@@ -27,6 +30,29 @@ const Contact = ({ blok }: { blok: any }) => {
       return;
     }
     setSending(true);
+    if (!executeRecaptcha) {
+      console.error("Google reCaptcha not loaded");
+      return;
+    }
+
+    const token = await executeRecaptcha("contact");
+
+    const response = await axios({
+      method: "POST",
+      url: "/api/recaptcha",
+      data: {
+        token,
+      },
+      headers: {
+        Accept: "app;ication/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response?.data?.success === true) {
+      console.log(`score: ${response?.data?.score}`);
+      return;
+    }
+    console.log(`score: ${response?.data?.score}`);
     try {
       const response = await sendEmail(data);
       setSubmitted(response === "Email sent" ? blok.success_message : "error");
@@ -50,14 +76,12 @@ const Contact = ({ blok }: { blok: any }) => {
               className={styles.form}
               id="contact_form"
             >
-              <div className={styles.field}>
-                <input
-                  type="text"
-                  id="honeypot"
-                  style={{ display: "none" }}
-                  {...register("honeypot")}
-                />
-              </div>
+              <input
+                type="text"
+                id="honeypot"
+                style={{ display: "none" }}
+                {...register("honeypot")}
+              />
               <div className={styles.field}>
                 <label htmlFor="name">{blok.name_label}</label>
                 <input

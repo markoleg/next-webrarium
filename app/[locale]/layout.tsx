@@ -8,6 +8,7 @@ import { i18nConfig } from "@/i18nConfig";
 import type { Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CalBlock from "@/app/components/CalBlock";
+import CaptchaProvider from "../components/CaptchaProvider";
 
 type PageParams = {
   locale: string;
@@ -86,7 +87,7 @@ export default function RootLayout({
           />
           <CalBlock />
           <Header locale={locale} />
-          {children}
+          <CaptchaProvider>{children}</CaptchaProvider>
           <Footer locale={locale} />
         </body>
         <GoogleAnalytics gaId="G-J8ZW4RCXNG" />

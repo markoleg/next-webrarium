@@ -15,6 +15,7 @@
     "@lottiefiles/lottie-player": "^2.0.4",
     "@next/third-parties": "^14.2.2",
     "@storyblok/react": "^3.0.8",
+    "axios": "^1.7.3",
     "next": "^14.1.0",
     "next-i18n-router": "^5.3.1",
     "nodemailer": "^6.9.13",
@@ -22,6 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.4",
+    "react-google-recaptcha-v3": "^1.10.1",
     "react-hook-form": "^7.51.2",
     "storyblok-rich-text-react-renderer": "^2.9.1"
   },
