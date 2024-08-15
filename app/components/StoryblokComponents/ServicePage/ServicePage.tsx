@@ -1,7 +1,7 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
 import style from "@/app/components/StoryblokComponents/ServicePage/ServicePage.module.css";
 
-export default async function ServicePage({ blok }: { blok: any }) {
+export default function ServicePage({ blok }: { blok: any }) {
   return (
     <main {...storyblokEditable(blok)}>
       <section className={style.hero_section}>

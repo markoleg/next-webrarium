@@ -1,18 +1,40 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
+import { storyblokEditable, getStoryblokApi } from "@storyblok/react/rsc";
 import styles from "@/app/components/StoryblokComponents/LatestProjects/LatestProjects.module.css";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function ProjectsGrid({ blok }: { blok: any }) {
+  const [resolvedBlok, setResolvedBlok] = useState(blok);
+
+  useEffect(() => {
+    const fetchResolvedData = async () => {
+      const storyblokApi = getStoryblokApi();
+      const { data } = await storyblokApi.get(`cdn/stories/${blok.slug}`, {
+        version: "draft",
+        resolve_relations: ["projects_grid.projects_list"],
+      });
+
+      setResolvedBlok(data.story.content);
+    };
+
+    if (!blok.projects_list) {
+      fetchResolvedData();
+    }
+  }, [blok]);
+
+  if (!resolvedBlok || !resolvedBlok.projects_list) {
+    return <div>Loading...</div>;
+  }
   return (
-    <section {...storyblokEditable(blok)}>
+    <section {...storyblokEditable(resolvedBlok)}>
       <div className="container">
-        {blok.title ? <h2>{blok.title}</h2> : null}
+        {resolvedBlok.title ? <h2>{resolvedBlok.title}</h2> : null}
         <div className={styles.projects_wrp}>
-          {blok.projects_list.map((project: any) => (
+          {resolvedBlok.projects_list.map((project: any) => (
             <ProjectCard
               blok={project}
               key={project.id}
-              btntxt={blok.button_txt}
+              btntxt={resolvedBlok.button_txt}
             />
           ))}
         </div>
