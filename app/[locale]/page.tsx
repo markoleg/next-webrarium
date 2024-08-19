@@ -2,6 +2,7 @@ import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+import { notFound } from "next/navigation";
 
 const englishMetadata: Metadata = {
   metadataBase: new URL("https://webrarium.com"),
@@ -45,10 +46,20 @@ storyblokInit({
 export async function generateMetadata({ params }: any) {
   return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
-export default async function Home({ params: { locale } }: any) {
-  const { data } = await fetchData(locale);
 
-  return <StoryblokStory story={data.story} />;
+interface HomeProps {
+  params: {
+    locale: string;
+  };
+}
+
+export default async function Home({ params: { locale } }: HomeProps) {
+  try {
+    const { data } = await fetchData(locale);
+    return <StoryblokStory story={data.story} />;
+  } catch {
+    return notFound(); // Повертає сторінку 404;
+  }
 }
 async function fetchData(locale: string) {
   let sbParams: {

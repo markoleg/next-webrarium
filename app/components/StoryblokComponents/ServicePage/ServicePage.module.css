@@ -27,7 +27,7 @@
 .service_need_wrp {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing);
+  gap: 2rem;
   place-items: center;
 }
 .service_need_cards_wrp {
@@ -40,10 +40,7 @@
   flex-direction: column;
   gap: var(--spacing);
 }
-.service_instruments_cards_wrp {
-  display: grid;
-  gap: var(--spacing);
-}
+
 @media (width<900px) {
   .service_need_wrp {
     grid-template-columns: 1fr;
@@ -68,10 +65,15 @@
   );
 }
 /* service instruments */
+.service_instruments_cards_wrp {
+  display: grid;
+  gap: 2rem;
+}
 .service_instruments_card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: var(--spacing);
+  align-items: flex-start;
 }
 .instruments_list {
   margin-top: 1rem;

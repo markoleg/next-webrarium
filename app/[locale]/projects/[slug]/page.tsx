@@ -1,3 +1,4 @@
+import GlobalContacts from "@/app/components/GlobalContacts";
 import {
   apiPlugin,
   getStoryblokApi,
@@ -43,5 +44,10 @@ async function fetchData(locale: string, slug: string) {
 export default async function ProjectPage({ params: { locale, slug } }: any) {
   const { data } = await fetchData(locale, slug);
 
-  return <StoryblokStory story={data.story} />;
+  return (
+    <>
+      <StoryblokStory story={data.story} />
+      <GlobalContacts locale={locale} />
+    </>
+  );
 }
