@@ -41,7 +41,7 @@ import StoryblokStory from "@storyblok/react/story";
 export default async function Projects({ params: { locale } }: any) {
   const { data } = await fetchData(locale);
 
-  return <StoryblokStory story={data.story} />;
+  return <StoryblokStory story={data.story} locale={locale} />;
 }
 async function fetchData(locale: string) {
   let sbParams: {

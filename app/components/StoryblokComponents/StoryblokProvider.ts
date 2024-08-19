@@ -20,7 +20,7 @@ import TestimonialCard from "./Testimonials/TestimonialCard";
 import Contact from "./Contact/Contact";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import ProjectPage from "./ProjectPage/ProjectPage";
-import ProjectsGrid from "./ProjectPage/ProjectsGrid";
+import ProjectsGrid from "./Projects/ProjectsGrid";
 import ServicePage from "./ServicePage/ServicePage";
 import ServicesGrid from "./Services/ServicesGrid";
 import h1Heading from "./h1_heading";
@@ -30,6 +30,11 @@ import ServiceNeed from "./ServicePage/ServiceNeed";
 import ServiceNeedCard from "./ServicePage/ServiceNeedCard";
 import ServiceInstruments from "./ServicePage/ServiceInstruments";
 import ServiceInstrumentsCard from "./ServicePage/ServiceInstrumentsCard";
+import ProjectHeadline from "./ProjectPage/ProjectHeadline";
+import ProjectChallengeInstruments from "./ProjectPage/ProjectChallengeInstruments";
+import ProjectResults from "./ProjectPage/ProjectResults";
+import ProjectResultsCard from "./ProjectPage/ProjectResultsCard";
+import ProjectRealization from "./ProjectPage/ProjectRealization";
 
 const components = {
   page: Page,
@@ -53,6 +58,11 @@ const components = {
   privacy_policy: PrivacyPolicy,
   project: ProjectPage,
   projects_grid: ProjectsGrid,
+  project_headline: ProjectHeadline,
+  project_challenge_and_instruments: ProjectChallengeInstruments,
+  project_results: ProjectResults,
+  project_results_card: ProjectResultsCard,
+  project_realization: ProjectRealization,
   service: ServicePage,
   services_grid: ServicesGrid,
   service_details: ServiceDetails,

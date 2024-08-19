@@ -1,4 +1,8 @@
-import { getStoryblokApi } from "@storyblok/react/rsc";
+import {
+  apiPlugin,
+  getStoryblokApi,
+  storyblokInit,
+} from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 
@@ -11,14 +15,23 @@ import type { Metadata } from "next";
 //     slug: project.slug,
 //   }));
 // }
+storyblokInit({
+  // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+  use: [apiPlugin],
+});
 
 async function fetchData(locale: string, slug: string) {
   let sbParams: {
     version: "published" | "draft";
     language: any;
+    resolve_relations: any;
   } = {
     version: "draft",
     language: locale,
+    resolve_relations: [
+      "services_grid.services_list,projects_grid.projects_list",
+    ],
   };
 
   const storyblokApi = getStoryblokApi();

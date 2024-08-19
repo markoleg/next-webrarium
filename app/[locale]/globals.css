@@ -115,6 +115,9 @@ section {
   padding-inline: 2rem;
   height: 100%;
 }
+.slim {
+  max-width: 1100px;
+}
 .divider {
   position: relative;
   width: 100%;
@@ -125,6 +128,16 @@ section {
     rgb(var(--foreground-rgb)) 50%,
     transparent 100%
   );
+}
+.breadcrumbs {
+  position: absolute;
+  top: 30px;
+}
+.breadcrumbs .bc_link {
+  color: #71aa67;
+}
+.breadcrumbs .bc_current {
+  color: lightgray;
 }
 h1 {
   font-size: 3rem;

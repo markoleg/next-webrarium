@@ -37,9 +37,13 @@ async function fetchData(locale: string, slug: string) {
   let sbParams: {
     version: "published" | "draft";
     language: any;
+    resolve_relations: any;
   } = {
     version: "draft",
     language: locale,
+    resolve_relations: [
+      "services_grid.services_list,projects_grid.projects_list",
+    ],
   };
 
   const storyblokApi = getStoryblokApi();
