@@ -33,7 +33,10 @@ const ukrMetadata: Metadata = {
     },
   },
 };
-
+export async function generateStaticParams() {
+  const statitParams = [{ locale: "en" }, { locale: "uk" }];
+  return statitParams;
+}
 storyblokInit({
   // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
