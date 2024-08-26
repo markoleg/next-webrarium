@@ -38,10 +38,10 @@ import StoryblokStory from "@storyblok/react/story";
 // export async function generateMetadata({ params }: any) {
 //   return params.locale === "en" ? englishMetadata : ukrMetadata;
 // }
-export async function generateStaticParams() {
-  const statitParams = [{ locale: "en" }, { locale: "uk" }];
-  return statitParams;
-}
+// export async function generateStaticParams() {
+//   const statitParams = [{ locale: "en" }, { locale: "uk" }];
+//   return statitParams;
+// }
 
 export default async function Services({ params: { locale } }: any) {
   const { data } = await fetchData(locale);

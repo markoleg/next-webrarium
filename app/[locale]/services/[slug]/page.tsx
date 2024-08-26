@@ -32,22 +32,22 @@ export async function generateMetadata({ params }: any) {
   return metadata;
 }
 
-export async function generateStaticParams() {
-  const services = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/services/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=services_grid.services_list`
-  ).then((res) => res.json());
+// export async function generateStaticParams() {
+//   const services = await fetch(
+//     `https://api.storyblok.com/v2/cdn/stories/services/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=services_grid.services_list`
+//   ).then((res) => res.json());
 
-  const slugsUk = services.rels.map((service: any) => ({
-    slug: service.slug,
-    locale: "uk",
-  }));
-  const slugsEn = services.rels.map((service: any) => ({
-    slug: service.slug,
-    locale: "en",
-  }));
-  const statitParams = [...slugsUk, ...slugsEn];
-  return statitParams;
-}
+//   const slugsUk = services.rels.map((service: any) => ({
+//     slug: service.slug,
+//     locale: "uk",
+//   }));
+//   const slugsEn = services.rels.map((service: any) => ({
+//     slug: service.slug,
+//     locale: "en",
+//   }));
+//   const statitParams = [...slugsUk, ...slugsEn];
+//   return statitParams;
+// }
 storyblokInit({
   // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
