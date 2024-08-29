@@ -9,6 +9,7 @@ import type { Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CalBlock from "@/app/components/CalBlock";
 import CaptchaProvider from "../components/CaptchaProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 type PageParams = {
   locale: string;
@@ -89,6 +90,7 @@ export default function RootLayout({
           <Header locale={locale} />
           <CaptchaProvider>{children}</CaptchaProvider>
           <Footer locale={locale} />
+          <Analytics />
         </body>
         <GoogleAnalytics gaId="G-J8ZW4RCXNG" />
       </html>
