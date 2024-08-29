@@ -10,7 +10,7 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
 }
 .project_hero {
   padding: 2rem 0;

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: any) {
   }
   const project = await projectData.json();
   const metadata: Metadata = {
-    title: project.story.content.title + " | webrarium",
+    title: project.story.content.title + " | Webrarium",
     description: project.story.content.subtitle,
     openGraph: {
       images: locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg",
@@ -33,23 +33,31 @@ export async function generateMetadata({ params }: any) {
   };
   return metadata;
 }
+// Next.js will invalidate the cache when a
+// request comes in, at most once every 60 seconds.
+export const revalidate = 60;
 
-// export async function generateStaticParams() {
-//   const projects = await fetch(
-//     `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=projects_grid.projects_list`
-//   ).then((res) => res.json());
+// We'll prerender only the params from `generateStaticParams` at build time.
+// If a request comes in for a path that hasn't been generated,
+// Next.js will server-render the page on-demand.
+export const dynamicParams = true; // or false, to 404 on unknown paths
 
-//   const slugsUk = projects.rels.map((project: any) => ({
-//     slug: project.slug,
-//     locale: "uk",
-//   }));
-//   const slugsEn = projects.rels.map((project: any) => ({
-//     slug: project.slug,
-//     locale: "en",
-//   }));
-//   const statitParams = [...slugsUk, ...slugsEn];
-//   return statitParams;
-// }
+export async function generateStaticParams() {
+  const projects = await fetch(
+    `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=projects_grid.projects_list`
+  ).then((res) => res.json());
+
+  const slugsUk = projects.rels.map((project: any) => ({
+    slug: project.slug,
+    locale: "uk",
+  }));
+  const slugsEn = projects.rels.map((project: any) => ({
+    slug: project.slug,
+    locale: "en",
+  }));
+  const statitParams = [...slugsUk, ...slugsEn];
+  return statitParams;
+}
 
 storyblokInit({
   // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,

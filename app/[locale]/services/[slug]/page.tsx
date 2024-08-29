@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: any) {
   const service = await serviceData.json();
 
   const metadata: Metadata = {
-    title: service.story.content.title + " | webrarium",
+    title: service.story.content.title + " | Webrarium",
     description: service.story.content.subtitle,
     openGraph: {
       images: locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg",
