@@ -21,8 +21,11 @@ export async function generateMetadata({ params }: any) {
     title: project.story.content.title + " | Webrarium",
     description: project.story.content.subtitle,
     openGraph: {
-      images: locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg",
+      images: project.story.content.cover.filename,
     },
+    // openGraph: {
+    //   images: locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg",
+    // },
     alternates: {
       canonical: `/${project.story.full_slug}`,
       languages: {

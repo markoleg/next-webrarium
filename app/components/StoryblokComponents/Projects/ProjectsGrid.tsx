@@ -35,6 +35,7 @@ export default function ProjectsGrid({ blok }: { blok: any }) {
               blok={project}
               key={project.id}
               btntxt={resolvedBlok.button_txt}
+              btn2txt={resolvedBlok.button2_txt}
             />
           ))}
         </div>
@@ -43,8 +44,18 @@ export default function ProjectsGrid({ blok }: { blok: any }) {
   );
 }
 
-function ProjectCard({ blok, btntxt }: { blok: any; btntxt: string }) {
+function ProjectCard({
+  blok,
+  btntxt,
+  btn2txt,
+}: {
+  blok: any;
+  btntxt: string;
+  btn2txt: string;
+}) {
   const projectLink = `/${blok.full_slug}`;
+  const projectSiteLink = blok.content.project_site_link || null;
+
   return (
     <div className={styles.project_card}>
       <img
@@ -57,9 +68,20 @@ function ProjectCard({ blok, btntxt }: { blok: any; btntxt: string }) {
         <h3>{blok.content.title}</h3>
         <div className={styles.divider}></div>
         <div className={styles.description}>{blok.content.description}</div>
-        <Link href={projectLink} className={styles.case_btn}>
-          {btntxt}
-        </Link>
+        <div className={styles.pc_btns_wrp}>
+          <Link href={projectLink} className={styles.case_btn}>
+            {btntxt}
+          </Link>
+          {projectSiteLink ? (
+            <Link
+              href={projectSiteLink.url}
+              className={styles.case_btn}
+              target="_blank"
+            >
+              {btn2txt}
+            </Link>
+          ) : null}
+        </div>
       </div>
     </div>
   );

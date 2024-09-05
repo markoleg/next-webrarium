@@ -39,6 +39,11 @@
   gap: 2rem;
   height: 100%;
 }
+.pc_btns_wrp {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 .case_btn {
   border: 1px solid white;
   padding: 1rem;
