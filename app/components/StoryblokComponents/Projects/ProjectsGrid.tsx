@@ -72,7 +72,7 @@ function ProjectCard({
           <Link href={projectLink} className={styles.case_btn}>
             {btntxt}
           </Link>
-          {projectSiteLink ? (
+          {projectSiteLink.url !== "" ? (
             <Link
               href={projectSiteLink.url}
               className={styles.case_btn}

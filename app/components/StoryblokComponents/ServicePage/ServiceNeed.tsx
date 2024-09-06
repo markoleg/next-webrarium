@@ -10,7 +10,7 @@ export default function ServiceNeed({ blok }: { blok: any }) {
         <h2>{blok.title}</h2>
         <div className={styles.service_need_wrp}>
           {!pattern.test(blok.media) ? (
-            <video autoPlay muted loop playsInline>
+            <video autoPlay muted loop playsInline controls={false}>
               <source src={blok.media}></source>
             </video>
           ) : (
