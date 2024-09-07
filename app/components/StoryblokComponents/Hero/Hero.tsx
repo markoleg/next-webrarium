@@ -32,7 +32,7 @@ export default function Hero({ blok }: { blok: any }) {
               src="/pupa.webp"
               width={256}
               height={137}
-              alt="logo variant"
+              alt="Pupa"
             />
           </div>
         </div>

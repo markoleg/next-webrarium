@@ -82,3 +82,9 @@
 .wa_btn svg path {
   fill: rgb(var(--foreground-rgb));
 }
+.form_right_div a:hover {
+  color: var(--main-color);
+}
+.form_right_div a:hover svg path {
+  fill: var(--main-color);
+}
