@@ -1,5 +1,5 @@
 import { storyblokEditable } from "@storyblok/react/rsc";
-import styles from "./LatestProjects.module.css";
+import styles from "@/app/components/StoryblokComponents/Projects/Projects.module.css";
 import Link from "next/link";
 
 export default function ProjectCard({

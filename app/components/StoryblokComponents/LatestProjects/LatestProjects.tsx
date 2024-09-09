@@ -1,5 +1,5 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react/rsc";
-import styles from "./LatestProjects.module.css";
+import styles from "@/app/components/StoryblokComponents/Projects/Projects.module.css";
 
 export default function LatestProjects({ blok }: { blok: any }) {
   return (

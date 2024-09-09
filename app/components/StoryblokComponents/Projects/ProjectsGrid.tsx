@@ -1,5 +1,5 @@
 import { storyblokEditable, getStoryblokApi } from "@storyblok/react/rsc";
-import styles from "@/app/components/StoryblokComponents/LatestProjects/LatestProjects.module.css";
+import styles from "@/app/components/StoryblokComponents/Projects/Projects.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
