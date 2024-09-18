@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Project
+
+This is a [Next.js](https://nextjs.org/) project using various third-party libraries and integrations to enhance functionality. This project incorporates content management, animations, form handling, and internationalization.
+
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Scripts](#scripts)
+- [License](#license)
+
+## Technologies Used
+
+- [@calcom/embed-react](https://github.com/calcom/embed-react) `^1.4.0` - Embed Cal.com scheduling component.
+- [@gsap/react](https://greensock.com/gsap/) `^2.1.0` - GreenSock Animation Platform for React.
+- [@lottiefiles/lottie-player](https://github.com/LottieFiles/lottie-react) `^2.0.4` - Lottie animations.
+- [@next/third-parties](https://github.com/vercel/next.js) `^14.2.2` - Official Next.js third-party plugins.
+- [@storyblok/react](https://github.com/storyblok/storyblok-react) `^3.0.8` - Storyblok CMS integration.
+- [@vercel/analytics](https://vercel.com/docs/concepts/analytics) `^1.3.1` - Vercel analytics for serverless apps.
+- [@vercel/blob](https://vercel.com/docs/storage/blob) `^0.23.4` - Vercel Blob for file storage.
+- [axios](https://axios-http.com/) `^1.7.3` - HTTP client for API requests.
+- [next](https://nextjs.org/) `^14.2.1` - The React Framework for Production.
+- [next-i18n-router](https://github.com/VicFrank/next-i18n-router) `^5.3.1` - i18n routing for Next.js.
+- [nodemailer](https://nodemailer.com/) `^6.9.13` - Email sending service.
+- [nookies](https://github.com/maticzav/nookies) `^2.5.2` - Cookie management for Next.js.
+- [react](https://reactjs.org/) `^18.2.0` - JavaScript library for building user interfaces.
+- [react-dom](https://reactjs.org/docs/react-dom.html) `^18.2.0` - React package for working with the DOM.
+- [react-fast-marquee](https://www.react-fast-marquee.com/) `^1.6.4` - React Marquee component for animated scrolling.
+- [react-google-recaptcha-v3](https://github.com/t49tran/react-google-recaptcha-v3) `^1.10.1` - Google ReCAPTCHA v3 component for React.
+- [react-hook-form](https://react-hook-form.com/) `^7.51.2` - Performant form library for React.
+- [storyblok-rich-text-react-renderer](https://www.storyblok.com/docs/rich-text) `^2.9.1` - Renderer for Storyblok's Rich Text field.
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/markoleg/next-webrarium.git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Create an `.env.local` file and configure your environment variables.
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Storyblok Integration**: Use Storyblok CMS to manage content dynamically.
+- **Internationalization**: Localization support with `next-i18n-router`.
+- **Forms**: Form handling with `react-hook-form`, including Google reCAPTCHA for spam protection.
+- **Animations**: GSAP and Lottie animations for enhanced UI/UX.
+- **Email Support**: Email functionality via Nodemailer.
+- **Vercel Integration**: Analytics and Blob storage via Vercel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Project Structure
+
+/api - Apis
+/components - Reusable components
+/utils - Utility functions
+/lib - Library
+
+## Scripts
+
+- `npm run dev`: Runs the development server.
+- `npm run build`: Builds the project for production.
+- `npm run start`: Starts the production server.
+- `npm run lint`: Lints the codebase.
+
+## License
+
+This project is licensed under the MIT License.

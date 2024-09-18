@@ -43,13 +43,13 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 .case_btn {
   border: 1px solid white;
   padding: 1rem;
   border-radius: 50vw;
   transition: transform 0.1s ease;
-  margin-top: auto;
 }
 .case_btn:hover {
   transform: scale(1.05);

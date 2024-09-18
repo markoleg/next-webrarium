@@ -5,9 +5,11 @@ import { render } from "storyblok-rich-text-react-renderer";
 import styles from "@/app/components/StoryblokComponents/Services/Services.module.css";
 import { useEffect, useState } from "react";
 import arrow from "@/public/link-external.svg";
+import { useParams } from "next/navigation";
 
 export default function ServicesGrid({ blok }: { blok: any }) {
   const [resolvedBlok, setResolvedBlok] = useState(blok);
+  const { locale } = useParams();
 
   useEffect(() => {
     const fetchResolvedData = async () => {
@@ -15,6 +17,7 @@ export default function ServicesGrid({ blok }: { blok: any }) {
       const { data } = await storyblokApi.get(`cdn/stories/${blok.slug}`, {
         version: "draft",
         resolve_relations: ["services_grid.services_list"],
+        language: locale.toString() || "uk",
       });
 
       setResolvedBlok(data.story.content);
