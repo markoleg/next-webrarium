@@ -4,7 +4,7 @@ import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer/Footer";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/app/components/StoryblokComponents/StoryblokProvider";
-import { i18nConfig } from "@/i18nConfig";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import CalBlock from "@/app/components/CalBlock";
@@ -90,6 +90,7 @@ export default function RootLayout({
           <Header locale={locale} />
           <CaptchaProvider>{children}</CaptchaProvider>
           <Footer locale={locale} />
+          <SpeedInsights />
           <Analytics />
         </body>
         <GoogleAnalytics gaId="G-J8ZW4RCXNG" />
