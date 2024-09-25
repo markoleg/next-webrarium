@@ -1,4 +1,8 @@
-import { getStoryblokApi } from "@storyblok/react/rsc";
+import {
+  apiPlugin,
+  getStoryblokApi,
+  storyblokInit,
+} from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 
@@ -38,6 +42,12 @@ const ukrMetadata: Metadata = {
 export async function generateMetadata({ params }: any) {
   return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
+
+storyblokInit({
+  // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+  use: [apiPlugin],
+});
 
 // export async function generateStaticParams() {
 //   const statitParams = [{ locale: "en" }, { locale: "uk" }];

@@ -38,29 +38,30 @@ export async function generateMetadata({ params }: any) {
 }
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60 seconds.
-export const revalidate = 60;
+// export const revalidate = 60;
 
 // We'll prerender only the params from `generateStaticParams` at build time.
 // If a request comes in for a path that hasn't been generated,
 // Next.js will server-render the page on-demand.
-export const dynamicParams = true; // or false, to 404 on unknown paths
+// export const dynamicParams = true; // or false, to 404 on unknown paths
 
-export async function generateStaticParams() {
-  const projects = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=projects_grid.projects_list`
-  ).then((res) => res.json());
+// export async function generateStaticParams() {
+//   const projects = await fetch(
+//     `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=projects_grid.projects_list`
+//   ).then((res) => res.json());
 
-  const slugsUk = projects.rels.map((project: any) => ({
-    slug: project.slug,
-    locale: "uk",
-  }));
-  const slugsEn = projects.rels.map((project: any) => ({
-    slug: project.slug,
-    locale: "en",
-  }));
-  const statitParams = [...slugsUk, ...slugsEn];
-  return statitParams;
-}
+//   const slugsUk = projects.rels.map((project: any) => ({
+//     slug: project.slug,
+//     locale: "uk",
+//   }));
+//   const slugsEn = projects.rels.map((project: any) => ({
+//     slug: project.slug,
+//     locale: "en",
+//   }));
+//   const staticParams = [...slugsUk, ...slugsEn];
+
+//   return staticParams;
+// }
 
 storyblokInit({
   // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
