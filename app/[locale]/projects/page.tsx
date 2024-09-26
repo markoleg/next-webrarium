@@ -7,7 +7,6 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 
 const englishMetadata: Metadata = {
-  // metadataBase: new URL("https://webrarium.com"),
   title: "Projects | Webrarium",
   // description:
   //   "Website development, chatbot development, marketing automation, product design, digital advertising.",
@@ -23,7 +22,6 @@ const englishMetadata: Metadata = {
   },
 };
 const ukrMetadata: Metadata = {
-  // metadataBase: new URL("https://webrarium.com"),
   title: "Проєкти | Webrarium",
   // description:
   //   "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
@@ -43,16 +41,11 @@ export async function generateMetadata({ params }: any) {
   return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
 
-storyblokInit({
-  // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
-  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-  use: [apiPlugin],
-});
+// storyblokInit({
+//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+//   use: [apiPlugin],
+// });
 
-// export async function generateStaticParams() {
-//   const statitParams = [{ locale: "en" }, { locale: "uk" }];
-//   return statitParams;
-// }
 export default async function Projects({ params: { locale } }: any) {
   const { data } = await fetchData(locale);
 
@@ -71,6 +64,9 @@ async function fetchData(locale: string) {
 
   const storyblokApi = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/projects`, sbParams, {
-    cache: "no-store",
+    // cache: "no-store",
+    next: {
+      revalidate: 60,
+    },
   });
 }

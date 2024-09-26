@@ -33,15 +33,11 @@ const ukrMetadata: Metadata = {
     },
   },
 };
-// export async function generateStaticParams() {
-//   const statitParams = [{ locale: "en" }, { locale: "uk" }];
-//   return statitParams;
-// }
-storyblokInit({
-  // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
-  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-  use: [apiPlugin],
-});
+
+// storyblokInit({
+//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+//   use: [apiPlugin],
+// });
 export async function generateMetadata({ params }: any) {
   return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
@@ -60,6 +56,9 @@ async function fetchData(locale: string) {
 
   const storyblokApi = getStoryblokApi();
   return await storyblokApi.get(`cdn/stories/privacy-policy`, sbParams, {
-    cache: "no-store",
+    // cache: "no-store",
+    next: {
+      revalidate: 60,
+    },
   });
 }

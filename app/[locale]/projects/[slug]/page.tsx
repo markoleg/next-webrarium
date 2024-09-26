@@ -8,11 +8,10 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-storyblokInit({
-  // accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
-  accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-  use: [apiPlugin],
-});
+// storyblokInit({
+//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+//   use: [apiPlugin],
+// });
 
 export async function generateMetadata({ params }: any) {
   const locale = params.locale || "uk";

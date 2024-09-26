@@ -3,8 +3,8 @@ import Image from "next/image";
 import Delta from "@/app/components/Delta/Delta";
 
 export async function generateStaticParams() {
-  const statitParams = [{ locale: "en" }, { locale: "uk" }];
-  return statitParams;
+  const staticParams = [{ locale: "en" }, { locale: "uk" }];
+  return staticParams;
 }
 
 export default function UiKit({ params: { locale } }: any) {

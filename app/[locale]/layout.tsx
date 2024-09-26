@@ -10,7 +10,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import CalBlock from "@/app/components/CalBlock";
 import CaptchaProvider from "../components/CaptchaProvider";
 import { Analytics } from "@vercel/analytics/react";
-
+import { i18nConfig } from "@/i18nConfig";
 type PageParams = {
   locale: string;
 };
@@ -63,9 +63,10 @@ const jsonLdEn = {
   logo: "https://a.storyblok.com/f/276513/140x16/0ee6252073/webrarium-logo.svg",
   telephone: "+38 073 979 79 54",
 };
-// export async function generateStaticParams(): Promise<PageParams[]> {
-//   return i18nConfig.locales.map((locale) => ({ locale }));
-// }
+export async function generateStaticParams(): Promise<PageParams[]> {
+  return i18nConfig.locales.map((locale) => ({ locale }));
+}
+export const revalidate = 60;
 
 export default function RootLayout({
   children,
