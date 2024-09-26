@@ -19,7 +19,7 @@
     "@vercel/blob": "^0.23.4",
     "@vercel/speed-insights": "^1.0.12",
     "axios": "^1.7.3",
-    "next": "^14.2.1",
+    "next": "^14.2.13",
     "next-i18n-router": "^5.3.1",
     "nodemailer": "^6.9.13",
     "nookies": "^2.5.2",
