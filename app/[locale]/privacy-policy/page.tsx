@@ -1,43 +1,7 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
-const englishMetadata: Metadata = {
-  metadataBase: new URL("https://webrarium.com"),
-  title: "Webrarium | Privacy Policy",
-  description: "Privacy Policy",
-  openGraph: {
-    images: "/Webrarium_Cover-open-graph.webp",
-  },
-  alternates: {
-    canonical: "/en/privacy-policy",
-    languages: {
-      uk: "/privacy-policy",
-      en: "/en/privacy-policy",
-    },
-  },
-};
-const ukrMetadata: Metadata = {
-  metadataBase: new URL("https://webrarium.com"),
-  title: "Webrarium | Політика конфіденційності",
-  description: "Політика конфіденційності",
-  openGraph: {
-    images: "/Webrarium_Cover-open-graph_UA.webp",
-  },
-  alternates: {
-    canonical: "/privacy-policy",
-    languages: {
-      uk: "/privacy-policy",
-      en: "/en/privacy-policy",
-    },
-  },
-};
-
-// storyblokInit({
-//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-//   use: [apiPlugin],
-// });
 export async function generateMetadata({ params: { locale } }: any) {
   const pageSlug = "privacy-policy";
   const rawSeoData = await fetch(
@@ -70,7 +34,6 @@ export async function generateMetadata({ params: { locale } }: any) {
     },
   };
   return Metadata;
-  // return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
 
 export default async function PrivacyPolicyPage({ params: { locale } }: any) {

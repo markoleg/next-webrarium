@@ -1,41 +1,7 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
-// import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { notFound } from "next/navigation";
-
-const englishMetadata: Metadata = {
-  metadataBase: new URL("https://webrarium.com"),
-  title: "Webrarium | We create digital solutions",
-  description:
-    "Website development, chatbot development, marketing automation, product design, digital advertising.",
-  openGraph: {
-    images: "/OpenGraph_Eng.jpg",
-  },
-  alternates: {
-    canonical: "/en",
-    languages: {
-      uk: "/",
-      en: "/en",
-    },
-  },
-};
-const ukrMetadata: Metadata = {
-  metadataBase: new URL("https://webrarium.com"),
-  title: "Webrarium | Створюємо цифрові рішення",
-  description:
-    "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама",
-  openGraph: {
-    images: "/OpenGraph_UA.jpg",
-  },
-  alternates: {
-    canonical: "/",
-    languages: {
-      uk: "/",
-      en: "/en",
-    },
-  },
-};
 
 export async function generateMetadata({ params: { locale } }: HomeProps) {
   const rawSeoData = await fetch(

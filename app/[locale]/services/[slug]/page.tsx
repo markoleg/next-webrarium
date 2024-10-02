@@ -1,7 +1,6 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import { notFound } from "next/navigation";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import GlobalContacts from "@/app/components/GlobalContacts";
 import { Metadata } from "next";
 
@@ -48,10 +47,7 @@ export async function generateStaticParams() {
   const statitParams = [...slugsUk, ...slugsEn];
   return statitParams;
 }
-// storyblokInit({
-//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-//   use: [apiPlugin],
-// });
+
 export default async function ServicePage({ params: { locale, slug } }: any) {
   try {
     const { data } = await fetchData(locale, slug);

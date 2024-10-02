@@ -1,17 +1,8 @@
 import GlobalContacts from "@/app/components/GlobalContacts";
-import {
-  // apiPlugin,
-  getStoryblokApi,
-  // storyblokInit,
-} from "@storyblok/react/rsc";
+import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-// storyblokInit({
-//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-//   use: [apiPlugin],
-// });
 
 export async function generateMetadata({ params }: any) {
   const locale = params.locale || "uk";
@@ -28,9 +19,6 @@ export async function generateMetadata({ params }: any) {
     openGraph: {
       images: project.story.content.cover.filename,
     },
-    // openGraph: {
-    //   images: locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg",
-    // },
     alternates: {
       canonical: `/${project.story.full_slug}`,
       languages: {
