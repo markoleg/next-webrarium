@@ -1,8 +1,8 @@
 import GlobalContacts from "@/app/components/GlobalContacts";
 import {
-  apiPlugin,
+  // apiPlugin,
   getStoryblokApi,
-  storyblokInit,
+  // storyblokInit,
 } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";

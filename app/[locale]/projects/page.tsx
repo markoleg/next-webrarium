@@ -37,8 +37,39 @@ const ukrMetadata: Metadata = {
   },
 };
 
-export async function generateMetadata({ params }: any) {
-  return params.locale === "en" ? englishMetadata : ukrMetadata;
+export async function generateMetadata({ params: { locale } }: any) {
+  const pageSlug = "projects";
+  const rawSeoData = await fetch(
+    `https://api.storyblok.com/v2/cdn/stories/${pageSlug}?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&language=${locale}`
+  );
+  const seoData = await rawSeoData.json();
+
+  const Metadata: Metadata = {
+    title:
+      seoData.story.content.title ||
+      (locale === "en"
+        ? "Webrarium | We create digital solutions"
+        : "Webrarium | Створюємо цифрові рішення"),
+    description:
+      seoData.story.content.description ||
+      (locale === "en"
+        ? "Website development, chatbot development, marketing automation, product design, digital advertising."
+        : "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама"),
+    openGraph: {
+      images:
+        seoData.story.content.og_image?.filename ||
+        (locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg"),
+    },
+    alternates: {
+      canonical: locale === "en" ? `/en/${pageSlug}` : `/${pageSlug}`,
+      languages: {
+        uk: `/${pageSlug}`,
+        en: `/en/${pageSlug}`,
+      },
+    },
+  };
+  return Metadata;
+  // return params.locale === "en" ? englishMetadata : ukrMetadata;
 }
 
 // storyblokInit({

@@ -1,7 +1,7 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
-import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
+// import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import { notFound } from "next/navigation";
 
 const englishMetadata: Metadata = {
@@ -37,13 +37,37 @@ const ukrMetadata: Metadata = {
   },
 };
 
-// storyblokInit({
-//   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-//   use: [apiPlugin],
-// });
+export async function generateMetadata({ params: { locale } }: HomeProps) {
+  const rawSeoData = await fetch(
+    `https://api.storyblok.com/v2/cdn/stories/home?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&language=${locale}`
+  );
+  const seoData = await rawSeoData.json();
 
-export async function generateMetadata({ params }: any) {
-  return params.locale === "en" ? englishMetadata : ukrMetadata;
+  const Metadata: Metadata = {
+    title:
+      seoData.story.content.title ||
+      (locale === "en"
+        ? "Webrarium | We create digital solutions"
+        : "Webrarium | Створюємо цифрові рішення"),
+    description:
+      seoData.story.content.description ||
+      (locale === "en"
+        ? "Website development, chatbot development, marketing automation, product design, digital advertising."
+        : "Створення сайтів, розробка чат-ботів, автоматизація маркетингу, продуктовий дизайн, цифрова реклама"),
+    openGraph: {
+      images:
+        seoData.story.content.og_image?.filename ||
+        (locale === "en" ? "/OpenGraph_Eng.jpg" : "/OpenGraph_UA.jpg"),
+    },
+    alternates: {
+      canonical: locale === "en" ? "/en" : "/",
+      languages: {
+        uk: "/",
+        en: "/en",
+      },
+    },
+  };
+  return Metadata;
 }
 
 interface HomeProps {

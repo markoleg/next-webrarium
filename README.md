@@ -19,9 +19,10 @@ This is a [Next.js](https://nextjs.org/) project using various third-party libra
 - [@next/third-parties](https://github.com/vercel/next.js) `^14.2.2` - Official Next.js third-party plugins.
 - [@storyblok/react](https://github.com/storyblok/storyblok-react) `^3.0.8` - Storyblok CMS integration.
 - [@vercel/analytics](https://vercel.com/docs/concepts/analytics) `^1.3.1` - Vercel analytics for serverless apps.
-- [@vercel/blob](https://vercel.com/docs/storage/blob) `^0.23.4` - Vercel Blob for file storage.
+- [@vercel/blob](https://vercel.com/docs/storage/vercel-blob) `^0.23.4` - Vercel Blob for file storage.
+- ["@vercel/speed-insights](https://vercel.com/docs/speed-insights)" `^1.0.12` - Vercel Speed Insights provides you with a detailed view of your website's performance metrics, facilitating informed decisions for its optimization.
 - [axios](https://axios-http.com/) `^1.7.3` - HTTP client for API requests.
-- [next](https://nextjs.org/) `^14.2.1` - The React Framework for Production.
+- [next](https://nextjs.org/) `^14.2.13` - The React Framework for Production.
 - [next-i18n-router](https://github.com/VicFrank/next-i18n-router) `^5.3.1` - i18n routing for Next.js.
 - [nodemailer](https://nodemailer.com/) `^6.9.13` - Email sending service.
 - [nookies](https://github.com/maticzav/nookies) `^2.5.2` - Cookie management for Next.js.
