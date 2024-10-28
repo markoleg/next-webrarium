@@ -57,41 +57,54 @@ const jsonLd = {
     areaServed: "UA",
     availableLanguage: "Ukrainian, English",
   },
-  service: [
-    {
-      "@type": "Service",
-      name: "Вебсайт компанії",
-      description:
-        "Розробляємо потужний онлайн-інструмент для залучення нових клієнтів і підвищення впізнаваності бренду. Від високоякісного UI/UX до стратегічної навігації. Створюємо веб-сайти, які відображають вашу компанію відповідно до споживчих цінностей.",
-      url: "https://webrarium.com/services/company-websites",
-      provider: {
-        "@type": "Organization",
-        name: "Webrarium",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Послуги компанії Webrarium",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Вебсайт компанії",
+          description:
+            "Розробляємо потужний онлайн-інструмент для залучення нових клієнтів і підвищення впізнаваності бренду. Від високоякісного UI/UX до стратегічної навігації. Створюємо веб-сайти, які відображають вашу компанію відповідно до споживчих цінностей.",
+          url: "https://webrarium.com/services/company-websites",
+          provider: {
+            "@type": "Organization",
+            name: "Webrarium",
+          },
+        },
       },
-    },
-    {
-      "@type": "Service",
-      name: "Цифрова реклама",
-      description:
-        "Забезпечить ваші оголошення охопленнями та взаємодіями. І так - це приносить прибутки.",
-      url: "https://webrarium.com/services/digital-advertising",
-      provider: {
-        "@type": "Organization",
-        name: "Webrarium",
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Цифрова реклама",
+          description:
+            "Забезпечить ваші оголошення охопленнями та взаємодіями. І так - це приносить прибутки.",
+          url: "https://webrarium.com/services/digital-advertising",
+          provider: {
+            "@type": "Organization",
+            name: "Webrarium",
+          },
+        },
       },
-    },
-    {
-      "@type": "Service",
-      name: "Онлайн-магазин",
-      description:
-        "Надаємо усі необхідні інструменти для успішного ведення електронної комерції.",
-      url: "https://webrarium.com/services/online-store",
-      provider: {
-        "@type": "Organization",
-        name: "Webrarium",
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Онлайн-магазин",
+          description:
+            "Надаємо усі необхідні інструменти для успішного ведення електронної комерції.",
+          url: "https://webrarium.com/services/online-store",
+          provider: {
+            "@type": "Organization",
+            name: "Webrarium",
+          },
+        },
       },
-    },
-  ],
+    ],
+  },
 };
 const jsonLdEn = {
   "@context": "https://schema.org",
@@ -109,41 +122,54 @@ const jsonLdEn = {
     areaServed: "UA",
     availableLanguage: "Ukrainian, English",
   },
-  service: [
-    {
-      "@type": "Service",
-      name: "Corporate Websites",
-      description:
-        "We develop a powerful online tool for attracting new clients and increasing brand recognition. From high-quality UI/UX design to strategic navigation, we create a company website that reflects your brand in alignment with consumer values.",
-      url: "https://webrarium.com/en/services/company-websites",
-      provider: {
-        "@type": "Organization",
-        name: "Webrarium",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Services of Webrarium",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Corporate Websites",
+          description:
+            "We develop a powerful online tool for attracting new clients and increasing brand recognition. From high-quality UI/UX design to strategic navigation, we create a company website that reflects your brand in alignment with consumer values.",
+          url: "https://webrarium.com/en/services/company-websites",
+          provider: {
+            "@type": "Organization",
+            name: "Webrarium",
+          },
+        },
       },
-    },
-    {
-      "@type": "Service",
-      name: "Digital Advertising",
-      description:
-        "Ensure your ads get the reach and engagement they need. And yes, it drives profits.",
-      url: "https://webrarium.com/en/services/digital-advertising",
-      provider: {
-        "@type": "Organization",
-        name: "Webrarium",
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Digital Advertising",
+          description:
+            "Ensure your ads get the reach and engagement they need. And yes, it drives profits.",
+          url: "https://webrarium.com/en/services/digital-advertising",
+          provider: {
+            "@type": "Organization",
+            name: "Webrarium",
+          },
+        },
       },
-    },
-    {
-      "@type": "Service",
-      name: "Online Store",
-      description:
-        "We provide all the necessary tools for successful e-commerce.",
-      url: "https://webrarium.com/en/services/online-store",
-      provider: {
-        "@type": "Organization",
-        name: "Webrarium",
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Online Store",
+          description:
+            "We provide all the necessary tools for successful e-commerce.",
+          url: "https://webrarium.com/en/services/online-store",
+          provider: {
+            "@type": "Organization",
+            name: "Webrarium",
+          },
+        },
       },
-    },
-  ],
+    ],
+  },
 };
 export async function generateStaticParams(): Promise<PageParams[]> {
   return i18nConfig.locales.map((locale) => ({ locale }));
