@@ -174,7 +174,7 @@ const jsonLdEn = {
 export async function generateStaticParams(): Promise<PageParams[]> {
   return i18nConfig.locales.map((locale) => ({ locale }));
 }
-export const revalidate = 60;
+export const revalidate = 600;
 
 export default function RootLayout({
   children,

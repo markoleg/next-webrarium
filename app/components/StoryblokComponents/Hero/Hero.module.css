@@ -1,45 +1,47 @@
 .hero_section {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  transition: all 0.5s ease;
+	min-height: 75vh;
+	display: flex;
+	align-items: center;
+	transition: all 0.5s ease;
 }
 .hero_wrp {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-  gap: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	text-align: center;
+	gap: 4rem;
 }
 .hero_wrp h1 {
-  font-size: inherit;
+	font-size: inherit;
 }
 .hero_title {
-  font-size: clamp(40px, 6vw, 100px);
-  text-align: center;
+	font-size: clamp(40px, 6vw, 100px);
+	text-align: center;
 }
 .subtitle {
-  font-weight: 400;
-  font-size: clamp(18px, 2vw, 40px);
+	font-weight: 400;
+	font-size: clamp(18px, 2vw, 40px);
 }
 .cta_btns_wrp {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .hero_cta {
-  padding: 1rem;
-  border: 1px solid rgb(var(--foreground-rgb));
-  width: 15ch;
-  border-radius: var(--border-radius);
-  transition: all 0.2s ease;
-  font-size: 0.9em;
+	padding: 1rem;
+	border: 1px solid rgb(var(--foreground-rgb));
+	width: 15ch;
+	border-radius: var(--border-radius);
+	transition: all 0.2s ease;
+	font-size: 0.9em;
+	cursor: pointer;
+	text-align: center;
 }
 .hero_cta:hover {
-  color: rgb(var(--background-end-rgb));
-  background-color: rgb(var(--foreground-rgb));
-  transform: scale(1.05);
+	color: rgb(var(--background-end-rgb));
+	background-color: rgb(var(--foreground-rgb));
+	transform: scale(1.05);
 }
