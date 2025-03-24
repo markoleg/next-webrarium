@@ -52,7 +52,7 @@ async function fetchData(locale: string) {
   return await storyblokApi.get(`cdn/stories/privacy-policy`, sbParams, {
     // cache: "no-store",
     next: {
-      revalidate: 60,
+      revalidate: 600,
     },
   });
 }

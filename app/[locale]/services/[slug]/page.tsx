@@ -4,10 +4,13 @@ import { notFound } from "next/navigation";
 import GlobalContacts from "@/app/components/GlobalContacts";
 import { Metadata } from "next";
 
+export const revalidate = 600;
+
 export async function generateMetadata({ params }: any) {
   const locale = params.locale || "uk";
   const serviceData = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/services/${params.slug}/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&language=${locale}`
+    `https://api.storyblok.com/v2/cdn/stories/services/${params.slug}/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&language=${locale}`,
+    { next: { revalidate: 600 } }
   );
   if (serviceData.status === 404) {
     return {};
@@ -33,7 +36,8 @@ export async function generateMetadata({ params }: any) {
 
 export async function generateStaticParams() {
   const services = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/services/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=services_grid.services_list`
+    `https://api.storyblok.com/v2/cdn/stories/services/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=services_grid.services_list`,
+    { next: { revalidate: 600 } }
   ).then((res) => res.json());
 
   const slugsUk = services.rels.map((service: any) => ({
@@ -77,9 +81,8 @@ async function fetchData(locale: string, slug: string) {
 
   const storyblokApi = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/services/${slug}`, sbParams, {
-    // cache: "no-store",
     next: {
-      revalidate: 60,
+      revalidate: 600,
     },
   });
 }

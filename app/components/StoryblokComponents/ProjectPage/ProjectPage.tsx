@@ -32,7 +32,7 @@ export default function ProjectPage({ blok }: { blok: any }) {
         </div>
       </section>
       {blok.blocks.map((nestedBlok: any) => (
-        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} projectLink={blok.project_site_link} />
       ))}
     </main>
   );

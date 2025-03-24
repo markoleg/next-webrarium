@@ -15,7 +15,7 @@ async function fetchData(locale: string) {
   return storyblokApi.get(`cdn/stories/header`, sbParams, {
     // cache: "no-store",
     next: {
-      revalidate: 60,
+      revalidate: 600,
     },
   });
 }

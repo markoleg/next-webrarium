@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: any) {
 
 // Next.js will invalidate the cache when a
 // request comes in, at most once every 60 seconds.
-export const revalidate = 60;
+export const revalidate = 600;
 
 // We'll prerender only the params from `generateStaticParams` at build time.
 // If a request comes in for a path that hasn't been generated,
@@ -41,7 +41,8 @@ export const dynamicParams = true; // or false, to 404 on unknown paths
 
 export async function generateStaticParams() {
   const projects = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=projects_grid.projects_list`
+    `https://api.storyblok.com/v2/cdn/stories/projects/?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&resolve_relations=projects_grid.projects_list`,
+    { next: { revalidate: 600 } }
   ).then((res) => res.json());
 
   const slugsUk = projects.rels.map((project: any) => ({
@@ -88,9 +89,8 @@ async function fetchData(locale: string, slug: string) {
 
   const storyblokApi = getStoryblokApi();
   return storyblokApi.get(`cdn/stories/projects/${slug}`, sbParams, {
-    // cache: "no-store",
     next: {
-      revalidate: 60,
+      revalidate: 600,
     },
   });
 }

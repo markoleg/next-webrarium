@@ -3,9 +3,13 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const revalidate = 600;
+
+
 export async function generateMetadata({ params: { locale } }: HomeProps) {
   const rawSeoData = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories/home?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&language=${locale}`
+    `https://api.storyblok.com/v2/cdn/stories/home?version=draft&token=${process.env.STORYBLOK_ACCESS_TOKEN}&language=${locale}`,
+    { next: { revalidate: 600 } }
   );
   const seoData = await rawSeoData.json();
 
@@ -64,7 +68,5 @@ async function fetchData(locale: string) {
   };
 
   const storyblokApi = getStoryblokApi();
-  return storyblokApi.get(`cdn/stories/home`, sbParams, {
-    cache: "no-store",
-  });
+  return storyblokApi.get(`cdn/stories/home`, sbParams, { next: { revalidate: 600 } });
 }
