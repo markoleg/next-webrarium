@@ -34,7 +34,7 @@ export default function UiKit({ params: { locale } }: any) {
                 <span>.svg </span>
                 <span>.png </span>
               </div>
-              <a href="/uikit/we-logos.zip" download className={styles.button}>
+              <a href="/uikit/webrarium-logos.zip" download className={styles.button}>
                 <svg
                   width="16"
                   height="19"
@@ -121,7 +121,7 @@ export default function UiKit({ params: { locale } }: any) {
             <Image src="/sticker.webp" width={250} height={250} alt="Pupa" />
           </div>
           <div className={styles.btn_wrp}>
-            <a href="/uikit/we-logos.zip" download className={styles.button}>
+            <a href="/uikit/webrarium-logos.zip" download className={styles.button}>
               <svg
                 width="16"
                 height="19"
