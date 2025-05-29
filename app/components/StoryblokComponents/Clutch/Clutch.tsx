@@ -10,7 +10,7 @@ export default function Clutch({ blok }: { blok: any }) {
                     <h2>{blok.title}</h2>
                     <div className={styles.logos_wrp}>
                         {blok.logos.map((logo: any, index: number) => (
-                            <div className={styles.service_card} key={logo._uid}>
+                            <div className={styles.service_card} key={index}>
                                 <Image src={logo.filename} alt={logo.alt} width={250} height={250} />
                             </div>
                         ))}

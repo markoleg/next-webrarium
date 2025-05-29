@@ -4,6 +4,7 @@ import StoryblokStory from "@storyblok/react/story";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+
 export async function generateMetadata({ params }: any) {
   const locale = params.locale || "uk";
   const projectData = await fetch(
