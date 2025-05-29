@@ -19,7 +19,7 @@ export default function ServicePage({ blok }: { blok: any }) {
           </div>
           <div className={style.hero_wrp}>
             <h1>{blok.title}</h1>
-            <div>{blok.subtitle}</div>
+            <div className={style.subtitle}>{blok.subtitle}</div>
             <div className="divider"></div>
           </div>
         </div>

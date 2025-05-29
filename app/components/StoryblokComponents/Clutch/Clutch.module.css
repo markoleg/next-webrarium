@@ -1,0 +1,10 @@
+.clutch_section {
+	display: flex;
+	align-items: top;
+	column-gap: 2rem;
+	flex-wrap: wrap;
+}
+.logos_wrp {
+	display: flex;
+	gap: var(--spacing);
+}

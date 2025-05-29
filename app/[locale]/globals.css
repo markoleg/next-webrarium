@@ -152,7 +152,7 @@ h2 {
 }
 h3 {
 	font-size: 1.75rem;
-	font-size: clamp(18px, 2.5vw, 32px);
+	font-size: clamp(18px, 2vw, 32px);
 }
 p:not(:last-child) {
 	margin-bottom: 1rem;

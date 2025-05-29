@@ -59,6 +59,17 @@
 .realization_txt {
 	columns: 320px 2;
 }
+.implementation {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--spacing);
+}
+.implementation_card {
+	padding: var(--card-padding);
+}
+.implementation h3 {
+	text-wrap: pretty;
+}
 .btn {
 	padding: 1rem;
 	border: 1px solid rgb(var(--foreground-rgb));
@@ -70,6 +81,9 @@
 	text-align: center;
 	display: block;
 	margin-top: 2rem;
+}
+.btnWild {
+	width: 100%;
 }
 .btn:hover {
 	color: rgb(var(--background-end-rgb));
@@ -83,5 +97,8 @@
 	}
 	.title {
 		font-size: 2rem;
+	}
+	.implementation {
+		grid-template-columns: 1fr;
 	}
 }
