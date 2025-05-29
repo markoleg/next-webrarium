@@ -8,3 +8,7 @@
 	display: flex;
 	gap: var(--spacing);
 }
+.logos_wrp img {
+	width: 100%;
+	height: auto;
+}
